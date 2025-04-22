@@ -1,0 +1,71 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: green;
+}
+
+table {
+    width: auto;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+td {
+    background-color: #ffffff;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+ul li {
+    color: blue;
+}
+
+.Ingrediente-Faltante {
+    color: red;
+}
+ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-position: outside; 
+    padding-left: 0;
+}
+
+ol li {
+    text-align: center;
+}
+a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+span{
+    text-decoration: line-through;
+    color: rgb(255, 0, 200);
+}
