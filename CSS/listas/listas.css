@@ -1,0 +1,12 @@
+.Texto-alineado{
+    color: green;
+    text-align: center;
+} 
+.Ingrediente-Faltante{
+    color: red;
+    text-align: center;
+}
+li{
+    color: blue;
+    text-align: center;
+}

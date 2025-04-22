@@ -1,0 +1,178 @@
+body {
+    color-scheme: light dark;
+    font-family: sans-serif;
+    margin: auto;
+    padding: 20px;
+    background-color: #121212;
+    color: #D3D3D3;
+}
+
+header {
+    background-color: #222;
+    color: #007BFF;
+    text-align: center;
+    padding: 1.5em 0;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    padding-top: 15px;
+    font-size: 26px;
+    margin: 0 0 15px 0;
+    color: #00FFFF;
+}
+
+p {
+    font-size: 18px;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 900px;
+    margin: 3em auto;
+    padding: 0 2em;
+}
+
+section {
+    margin-bottom: 3em;
+    padding: 1.5em;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #222;
+}
+
+h2 {
+    color: #00FFFF;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    color: #C0C0C0;
+}
+
+footer {
+    background-color: #222;
+    color: #D3D3D3;
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+    border: 2px solid #007BFF;
+}
+
+.rutas-list a {
+    display: block;
+    margin-bottom: 0.7em;
+    color: #FFFF00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rutas-list a:hover {
+    text-decoration: underline;
+    color: #00FF00;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        padding: 1em 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    main {
+        padding: 0 1em;
+        margin: 2em auto;
+    }
+
+    section {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.8em;
+    }
+
+    ul li {
+        font-size: 1em;
+        margin-bottom: 0.6em;
+    }
+
+    footer {
+        padding: 1em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    main {
+        padding: 0 0.5em;
+        margin: 1.5em auto;
+    }
+
+    section {
+        padding: 0.8em;
+        margin-bottom: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+        margin-bottom: 0.6em;
+    }
+
+    ul li {
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+    }
+}
