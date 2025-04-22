@@ -1,13 +1,14 @@
 body {
-    background-color: lightblue;
+    background-color: #121212; /* Fondo oscuro como en el segundo bloque */
     text-align: center;
     font-family: sans-serif;
     margin: 0;
     padding: 20px;
+    color: #D3D3D3; /* Texto general gris claro del segundo bloque */
 }
 
 h1 {
-    color: green;
+    color: #00FFFF; /* Aguamarina brillante como los h1 del segundo bloque */
 }
 
 table {
@@ -17,16 +18,18 @@ table {
 }
 
 th, td {
-    border: 1px solid black;
+    border: 1px solid #007BFF; /* Borde azul brillante similar al segundo bloque */
     padding: 8px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #222; /* Gris más claro como el header del segundo bloque */
+    color: #007BFF; /* Texto azul brillante como el header del segundo bloque */
 }
 td {
-    background-color: #ffffff;
+    background-color: #333; /* Gris más oscuro como los párrafos del segundo bloque */
+    color: #D3D3D3; /* Texto gris claro */
 }
 
 ul {
@@ -37,35 +40,39 @@ ul {
 }
 
 ul li {
-    color: blue;
+    color: #C0C0C0; /* Gris medio como los list items del segundo bloque */
 }
 
 .Ingrediente-Faltante {
-    color: red;
+    color: #FFFF00; /* Amarillo brillante como los enlaces del segundo bloque */
 }
+
 ol {
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style-position: outside; 
+    list-style-position: outside;
     padding-left: 0;
 }
 
 ol li {
     text-align: center;
+    color: #C0C0C0; /* Gris medio para los items de la lista ordenada */
 }
+
 a {
     display: block;
     margin-top: 10px;
-    color: #007bff;
+    color: #FFFF00; /* Amarillo brillante como los enlaces del segundo bloque */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #00FF00; /* Verde brillante como el hover de los enlaces del segundo bloque */
 }
 
-span{
+span {
     text-decoration: line-through;
-    color: rgb(255, 0, 200);
+    color: #00FFFF; /* Aguamarina brillante para el texto tachado */
 }
