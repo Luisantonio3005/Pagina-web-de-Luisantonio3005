@@ -79,153 +79,145 @@ footer {
     border: 2px solid #007BFF;
 }
 
-.rutas-list a {
-    display: block;
-    margin-bottom: 0.7em;
-    color: #FFFF00;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.rutas-list a:hover {
-    text-decoration: underline;
-    color: #00FF00;
-}
-
-
-#certificados-section {
-    text-align: center; 
-}
-
-#certificados-section > div {
-    margin-bottom: 2em; 
-}
-
-#certificados-section h3 {
-    color: #00FFFF;
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
-}
-
-#certificados-section img {
-    max-width: 80%; 
-    height: auto;
-    border: 1px solid #555;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-}
-
-#certificados-section img:hover {
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
+/* Estilos para el contenedor principal de los enlaces externos */
+.enlaces-externos-container {
+    text-align: center; /* Centra el texto (en este caso, el título "Enlaces Externos") dentro del contenedor */
+  }
+  
+  /* Estilos para el contenedor de los iconos de los enlaces externos */
+  .enlaces-externos {
+    display: flex; /* Utiliza Flexbox para alinear los elementos hijos (los enlaces) en una fila */
+    justify-content: center; /* Centra los elementos hijos horizontalmente dentro del contenedor */
+    align-items: center; /* Centra los elementos hijos verticalmente dentro del contenedor (si es necesario) */
+    gap: 15px; /* Define un espacio de 15 píxeles entre cada elemento hijo (entre los iconos) */
+    margin-top: 10px; /* Añade un margen de 10 píxeles en la parte superior del contenedor para separarlo del elemento anterior */
+  }
+  
+  /* Estilos para cada enlace individual dentro del contenedor de enlaces externos */
+  .enlaces-externos a {
+    display: inline-block; /* Permite aplicar propiedades de bloque como ancho y alto al enlace, pero se comporta como un elemento en línea */
+  }
+  
+  /* Estilos para las imágenes dentro de los enlaces externos */
+  .enlaces-externos img {
+    width: 78px; /* Establece el ancho deseado para las imágenes en 78 píxeles */
+    height: 78px; /* Establece la altura deseada para las imágenes en 78 píxeles */
+    object-fit: contain; /* Asegura que la imagen se ajuste completamente dentro de su contenedor sin ser recortada, manteniendo su relación de aspecto */
+    transition: transform 0.3s ease-in-out; /* Define una transición suave para la propiedad 'transform' que durará 0.3 segundos con una función de aceleración ease-in-out */
+  }
+  
+  /* Estilos que se aplican a las imágenes cuando el cursor del ratón pasa por encima */
+  .enlaces-externos img:hover {
+    transform: scale(1.2); /* Escala la imagen a 1.2 veces su tamaño original al hacer hover */
+  }
+  
+  /* Estilos para los enlaces dentro de la lista con la clase "rutas-list" */
+  .rutas-list a {
+    display: inline-block; /* Permite aplicar ancho y alto, pero el elemento se comporta como en línea */
+    margin-bottom: 0.7em; /* Añade un margen inferior de 0.7em para separar los enlaces verticalmente */
+    color: #FFFF00; /* Establece el color del texto del enlace en amarillo */
+    text-decoration: none; /* Elimina la decoración de texto predeterminada (subrayado) */
+    transition: color 0.9s ease; /* Define una transición suave para la propiedad 'color' que durará 0.9 segundos con una función de aceleración ease */
+    padding: 5px 10px; /* Añade un espacio interno de 5 píxeles arriba y abajo, y 10 píxeles a la izquierda y derecha del texto del enlace */
+  }
+  
+  /* Estilos que se aplican a los enlaces de "rutas-list" cuando el cursor del ratón pasa por encima */
+  .rutas-list a:hover {
+    text-decoration: underline; /* Agrega un subrayado al texto del enlace al hacer hover */
+    color: #00FF00; /* Cambia el color del texto del enlace a verde al hacer hover */
+  }
+  
+  /* Estilos para la sección con el ID "certificados-section" */
+  #certificados-section {
+    text-align: center; /* Centra el texto dentro de esta sección */
+  }
+  
+  /* Estilos para los elementos div directos dentro de la sección "certificados-section" */
+  #certificados-section > div {
+    margin-bottom: 2em; /* Añade un margen inferior de 2em a estos divs para separarlos verticalmente */
+  }
+  
+  /* Estilos para los elementos h3 dentro de la sección "certificados-section" */
+  #certificados-section h3 {
+    color: #00FFFF; /* Establece el color del texto en aguamarina */
+    font-size: 1.2em; /* Establece el tamaño de la fuente en 1.2 veces el tamaño predeterminado */
+    margin-bottom: 0.5em; /* Añade un margen inferior de 0.5em para separar el h3 del elemento siguiente */
+  }
+  
+  /* Estilos para las imágenes dentro de la sección "certificados-section" */
+  #certificados-section img {
+    max-width: 80%; /* Establece el ancho máximo de la imagen al 80% de su contenedor para que no se desborde */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción de la imagen */
+    border: 1px solid #555; /* Añade un borde de 1 píxel de grosor, sólido y de color gris oscuro */
+    border-radius: 5px; /* Redondea las esquinas de la imagen con un radio de 5 píxeles */
+    transition: transform 0.3s ease-in-out; /* Define una transición suave para la propiedad 'transform' */
+  }
+  
+  /* Estilos que se aplican a las imágenes de "certificados-section" cuando el cursor del ratón pasa por encima */
+  #certificados-section img:hover {
+    transform: scale(1.05); /* Escala ligeramente la imagen al 1.05 veces su tamaño original al hacer hover */
+  }
+  
+  /* Media query para pantallas con un ancho máximo de 768 píxeles (tabletas, etc.) */
+  @media (max-width: 768px) {
     body {
-        padding: 15px;
+      padding: 15px; /* Reduce el relleno del cuerpo a 15 píxeles en pantallas más pequeñas */
     }
-
+  
     header {
-        padding: 1em 0;
+      padding: 1em 0; /* Reduce el relleno superior e inferior del encabezado a 1em */
     }
-
+  
     header h1 {
-        font-size: 2em;
+      font-size: 2em; /* Reduce el tamaño de la fuente del h1 en el encabezado */
     }
-
+  
     h1 {
-        font-size: 22px;
+      font-size: 22px; /* Reduce el tamaño de la fuente del h1 general */
     }
-
+  
     p {
-        font-size: 16px;
-        padding: 10px;
+      font-size: 16px; /* Reduce el tamaño de la fuente de los párrafos */
+      padding: 10px; /* Reduce el relleno de los párrafos */
     }
-
+  
     main {
-        padding: 0 1em;
-        margin: 2em auto;
+      padding: 0 1em; /* Reduce el relleno izquierdo y derecho del elemento main */
+      margin: 2em auto; /* Reduce el margen superior e inferior del elemento main */
     }
-
+  
     section {
-        padding: 1em;
-        margin-bottom: 2em;
+      padding: 1em; /* Reduce el relleno de las secciones */
+      margin-bottom: 2em; /* Reduce el margen inferior de las secciones */
     }
-
+  
     h2 {
-        font-size: 1.8em;
-        margin-bottom: 0.8em;
+      font-size: 1.8em; /* Reduce el tamaño de la fuente del h2 */
+      margin-bottom: 0.8em; /* Reduce el margen inferior del h2 */
     }
-
+  
     ul li {
-        font-size: 1em;
-        margin-bottom: 0.6em;
+      font-size: 1em; /* Reduce el tamaño de la fuente de los elementos de la lista */
+      margin-bottom: 0.6em; /* Reduce el margen inferior de los elementos de la lista */
     }
-
+  
     footer {
-        padding: 1em 0;
+      padding: 1em 0; /* Reduce el relleno superior e inferior del pie de página */
     }
-
+  
     #certificados-section > div {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+      width: 80%; /* Reduce el ancho de los divs dentro de "certificados-section" */
+      margin-left: auto; /* Centra horizontalmente los divs */
+      margin-right: auto; /* Centra horizontalmente los divs */
     }
-
+  
     #certificados-section img {
-        max-width: 100%; 
+      max-width: 100%; /* Permite que las imágenes dentro de "certificados-section" ocupen todo el ancho de su contenedor */
     }
-
+  
     #certificados-section h3 {
-        font-size: 1.1em;
+      font-size: 1.1em; /* Reduce el tamaño de la fuente del h3 dentro de "certificados-section" */
     }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 1.7em;
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 15px;
-    }
-
-    main {
-        padding: 0 0.5em;
-        margin: 1.5em auto;
-    }
-
-    section {
-        padding: 0.8em;
-        margin-bottom: 1.5em;
-    }
-
-    h2 {
-        font-size: 1.6em;
-        margin-bottom: 0.6em;
-    }
-
-    ul li {
-        font-size: 0.9em;
-        margin-bottom: 0.5em;
-    }
-
-    #certificados-section > div {
-        width: 95%;
-    }
-
-    #certificados-section img {
-        max-width: 100%;
-    }
-
-    #certificados-section h3 {
-        font-size: 1em;
-    }
-}
+  }
+  
+  /* Media query para pantallas con un ancho máximo
