@@ -1,0 +1,434 @@
+/*
+ * ========================================
+ * Estilos Generales y Reseteos
+ * ========================================
+ */
+html,
+body {
+    overflow-x: hidden; /* Evita barras de scroll horizontales indeseadas */
+}
+
+body {
+    color-scheme: light dark;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Cambiado a una fuente más moderna */
+    margin: auto;
+    padding: 20px;
+    background-color: var(--bg-main); /* Usando variable */
+    color: var(--text-main); /* Usando variable */
+    transition: background 0.4s, color 0.4s; /* Transición suave para cambios de tema */
+}
+
+/*
+ * ========================================
+ * Variables de Color y Animación (Modo Oscuro Neón)
+ * ========================================
+ */
+:root {
+    /* Colores para modo oscuro, como en la imagen */
+    --bg-main: #000000; /* Negro */
+    --bg-section: #0a0a0a; /* Un negro ligeramente más claro para secciones */
+    --bg-header: #000000; /* Negro */
+    --bg-nav: #000000; /* Negro */
+    --bg-footer: #000000; /* Negro */
+    --text-main: #e0f7fa; /* Azul neón claro para texto principal */
+    --text-header: #00e5ff; /* Azul neón brillante para el header (el título grande) */
+    --accent: #00e5ff; /* Azul neón brillante para acentos generales (títulos de sección, etc.) */
+
+    /* Colores para enlaces */
+    --link-opaque: rgba(255, 255, 255, 0.5); /* Blanco opaco para el estado normal */
+    --link-bright: #ffffff; /* Blanco brillante para el hover */
+    --link-shadow-opaque: rgba(255, 255, 255, 0.08); /* Sombra tenue para el estado opaco */
+    --link-shadow-bright: rgba(255, 255, 255, 0.3); /* Sombra brillante para el estado hover */
+    --border: #00e5ff; /* Azul neón para bordes */
+
+    /* Duraciones y Easings de Animación */
+    --transition-duration: 0.8s;
+    --transition-ease: ease-out;
+    --float-duration-y: 3s;
+    --float-duration-x: 4s;
+    --float-ease: ease-in-out;
+}
+
+/*
+ * ========================================
+ * Estilos de Layout y Componentes
+ * ========================================
+ */
+header {
+    background-color: var(--bg-header); /* Usando variable */
+    color: var(--text-header); /* Usando variable */
+    text-align: center;
+    padding: 1.5em 0;
+    border: 2px solid var(--border); /* Usando variable */
+    border-radius: 5px;
+    box-shadow: 0 2px 12px rgba(0, 229, 255, 0.15); /* Sombra neón */
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 2px; /* Aumentado el espaciado para un efecto neón */
+    color: var(--text-header); /* Usando variable */
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Sombra neón en el título */
+}
+
+h1 {
+    padding-top: 15px;
+    font-size: 26px;
+    margin: 0 0 15px 0;
+    color: var(--accent); /* Usando variable */
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); /* Sombra neón */
+}
+
+p {
+    font-size: 18px;
+    padding: 15px;
+    background-color: var(--bg-section); /* Usando variable */
+    border-radius: 8px;
+    line-height: 1.6;
+    color: var(--text-main); /* Usando variable */
+    box-shadow: 0 1px 8px rgba(0, 229, 255, 0.05); /* Sombra sutil */
+}
+
+main {
+    max-width: 900px;
+    margin: 3em auto;
+    padding: 0 2em;
+    background-color: var(--bg-section); /* Usando variable */
+    border-radius: 12px; /* Más redondeado */
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.1); /* Sombra neón */
+    transition: background 0.4s;
+}
+
+section {
+    margin-bottom: 3em;
+    padding: 1.5em;
+    border: 2px solid var(--border); /* Usando variable */
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(0, 229, 255, 0.07); /* Fondo ligeramente neón */
+    box-shadow: 0 1px 8px rgba(0, 229, 255, 0.07); /* Sombra neón */
+}
+
+h2 {
+    color: var(--accent); /* Usando variable */
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); /* Sombra neón */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    color: var(--text-main); /* Usando variable */
+}
+
+footer {
+    background-color: var(--bg-footer); /* Usando variable */
+    color: var(--text-header); /* Usando variable para consistencia */
+    text-align: center;
+    padding: 1.5em 0;
+    position: relative;
+    border: 2px solid var(--border); /* Usando variable */
+    border-radius: 0 0 12px 12px; /* Más redondeado abajo */
+    box-shadow: 0 -2px 12px rgba(0, 229, 255, 0.1); /* Sombra neón */
+}
+
+/* Estilos para el contenedor principal de los enlaces externos */
+.enlaces-externos-container {
+    text-align: center;
+}
+
+/* Estilos para el contenedor de los iconos de los enlaces externos */
+.enlaces-externos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Estilos para cada enlace individual dentro del contenedor de enlaces externos */
+.enlaces-externos a {
+    display: inline-block;
+}
+
+/* Estilos para las imágenes dentro de los enlaces externos */
+.enlaces-externos img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    border-radius: 50%; /* Imágenes de iconos circulares */
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); /* Sombra neón para iconos */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estilos que se aplican a las imágenes cuando el cursor del ratón pasa por encima */
+.enlaces-externos img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.6); /* Sombra más intensa al hover */
+}
+
+/* Estilos para los enlaces dentro de la lista con la clase "rutas-list" */
+.rutas-list a {
+    display: inline-block;
+    margin-bottom: 0.7em;
+    color: var(--link-opaque); /* Usando variable */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    padding: 5px 10px;
+    text-shadow: 0 1px 8px var(--link-shadow-opaque);
+}
+
+/* Estilos que se aplican a los enlaces de "rutas-list" cuando el cursor del ratón pasa por encima */
+.rutas-list a:hover {
+    color: var(--link-bright); /* Usando variable */
+    text-decoration: underline;
+    text-shadow: 0 2px 12px var(--link-shadow-bright);
+}
+
+/* Estilos para la sección con el ID "certificados-section" */
+#certificados-section {
+    text-align: center;
+}
+
+/* Estilos para los elementos div directos dentro de la sección "certificados-section" */
+#certificados-section > div {
+    margin-bottom: 2em;
+}
+
+/* Estilos para los elementos h3 dentro de la sección "certificados-section" */
+#certificados-section h3 {
+    color: var(--accent); /* Usando variable */
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+}
+
+/* Estilos para las imágenes dentro de la sección "certificados-section" */
+#certificados-section img {
+    max-width: 80%;
+    height: auto;
+    border: 1px solid var(--border); /* Usando variable */
+    border-radius: 8px; /* Ligeramente más redondeado */
+    box-shadow: 0 4px 24px rgba(0, 229, 255, 0.18); /* Sombra neón */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estilos que se aplican a las imágenes de "certificados-section" cuando el cursor del ratón pasa por encima */
+#certificados-section img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px 4px rgba(0, 170, 255, 0.18); /* Sombra neón al hacer hover */
+}
+
+/*
+ * ========================================
+ * Animaciones Keyframes
+ * ========================================
+ */
+
+/* Animación de flotación vertical (si aplica a alguna imagen) */
+@keyframes floatY {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+/* Animación de flotación horizontal (si aplica a alguna imagen) */
+@keyframes floatX {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(18px); }
+    100% { transform: translateX(0); }
+}
+
+/* Animación de entrada: Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de entrada: Fade In Left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación de entrada: Fade In Right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*
+ * ========================================
+ * Control de visibilidad y animaciones con JavaScript
+ * ========================================
+ */
+
+/* Ocultar secciones y footer por defecto antes de que JavaScript actúe */
+body:not(.js-ready) section,
+body:not(.js-ready) footer {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Estilos de TRANSICIÓN para las secciones cuando JavaScript está activo */
+body.js-ready section,
+body.js-ready footer {
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity var(--transition-duration) var(--transition-ease),
+                transform var(--transition-duration) var(--transition-ease);
+}
+
+/* Cuando la clase 'is-visible' se añade, aplica la animación de entrada */
+body.js-ready section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp var(--transition-duration) var(--transition-ease) forwards;
+}
+
+/* Opcional: animar secciones alternas de diferente manera */
+body.js-ready section:nth-of-type(odd).is-visible {
+    animation: fadeInLeft var(--transition-duration) var(--transition-ease) forwards;
+}
+
+body.js-ready section:nth-of-type(even).is-visible {
+    animation: fadeInRight var(--transition-duration) var(--transition-ease) forwards;
+}
+
+/* Animación para el footer */
+body.js-ready footer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp var(--transition-duration) var(--transition-ease) forwards;
+}
+
+
+/*
+ * ========================================
+ * Responsive Design
+ * ========================================
+ */
+@media (max-width: 900px) { /* Añadido para pantallas más grandes que 768px pero menores de 900px */
+    main {
+        padding: 15px;
+        max-width: 95%;
+    }
+    section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        padding: 1em 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    main {
+        padding: 0 1em;
+        margin: 2em auto;
+    }
+
+    section {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 0.8em;
+    }
+
+    ul li {
+        font-size: 1em;
+        margin-bottom: 0.6em;
+    }
+
+    footer {
+        padding: 1em 0;
+    }
+
+    .enlaces-externos img {
+        width: 60px; /* Reducido para pantallas pequeñas */
+        height: 60px;
+    }
+
+    #certificados-section > div {
+        width: 90%; /* Ajuste para móviles */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #certificados-section img {
+        max-width: 100%;
+    }
+
+    #certificados-section h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0.7rem 0;
+    }
+    /* Si tuvieras una nav aquí, podrías ajustarla como en el ejemplo anterior */
+    main {
+        padding: 10px;
+        max-width: 100%;
+    }
+    section {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    footer {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}
