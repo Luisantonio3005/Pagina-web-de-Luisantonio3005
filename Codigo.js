@@ -1,4 +1,3 @@
-console.log("PAGINA CREADA POR LUIS ANTONIO CANALES GUERRERO");
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Añadir una clase al body para indicar que JS está listo
     // Esto permite que el CSS controle las animaciones solo cuando JS está presente
