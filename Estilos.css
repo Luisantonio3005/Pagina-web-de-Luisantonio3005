@@ -80,6 +80,35 @@ h1 {
     text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); /* Sombra neón */
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  background-color: var(--bg-nav);
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.1); /* Sombra con color neón */
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 18px;
+}
+
+/* Estilos para enlaces del HEADER (NAVEGACIÓN) - AHORA BLANCO OPACO -> BLANCO BRILLANTE */
+nav ul li a {
+  color: var(--link-opaque); /* Blanco opaco */
+  text-decoration: none;
+  padding: 10px 0;
+  display: inline-block;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Transición suave */
+  text-shadow: 0 1px 8px var(--link-shadow-opaque); /* Sombra tenue */
+}
+
+nav ul li a:hover {
+  color: var(--link-bright); /* Blanco brillante */
+  text-shadow: 0 2px 12px var(--link-shadow-bright); /* Sombra brillante */
+}
 p {
     font-size: 18px;
     padding: 15px;
