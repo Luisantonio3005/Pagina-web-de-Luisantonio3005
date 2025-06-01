@@ -1,73 +1,85 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Añadir una clase al body para indicar que JS está listo
-    // Esto permite que el CSS controle las animaciones solo cuando JS está presente
+    // Marcar el body como listo para las animaciones
     document.body.classList.add('js-ready');
 
-    // Seleccionar todas las secciones que queremos animar al hacer scroll
-    const sectionsToAnimate = document.querySelectorAll('section');
-    const footerToAnimate = document.querySelector('footer');
-
-    // Opciones para el Intersection Observer
-    // root: null significa el viewport del navegador
-    // rootMargin: '0px' significa que la intersección se activa cuando el elemento entra/sale del viewport
-    // threshold: 0.2 significa que la intersección se activa cuando el 20% del elemento es visible
+    // Configuración del Intersection Observer
     const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2 // Puedes ajustar este valor (0.0 a 1.0)
+        root: null, // usar el viewport
+        rootMargin: '-50px', // margen negativo para activar un poco antes
+        threshold: 0.1 // activar cuando al menos 10% de la sección sea visible
     };
 
-    // Crear una nueva instancia de Intersection Observer
-    const observer = new IntersectionObserver((entries, observer) => {
+    // Callback para el observer
+    const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Si el elemento es visible, añadir la clase 'is-visible'
+                // Cuando la sección entra en vista
                 entry.target.classList.add('is-visible');
-                // Opcional: Si quieres que la animación se ejecute solo una vez,
-                // puedes dejar de observar el elemento después de que sea visible.
-                // observer.unobserve(entry.target);
+                entry.target.classList.remove('not-visible');
             } else {
-                // Opcional: Si quieres que la animación se reinicie cada vez que el usuario sale y vuelve a entrar
-                // en la sección (scroll hacia arriba y hacia abajo), puedes quitar la clase.
-                // Si no quieres que se reinicie, elimina esta línea.
+                // Cuando la sección sale de vista
                 entry.target.classList.remove('is-visible');
+                entry.target.classList.add('not-visible');
             }
         });
-    }, observerOptions);
+    };
 
-    // Observar cada sección
-    sectionsToAnimate.forEach(section => {
-        observer.observe(section);
+    // Crear el observer
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observar todas las secciones y el footer
+    document.querySelectorAll('section, footer').forEach(element => {
+        observer.observe(element);
+        // Asegurarse de que el elemento comience como no visible
+        element.classList.add('not-visible');
     });
 
-    // Observar el footer también
-    if (footerToAnimate) {
-        observer.observe(footerToAnimate);
+    // Función para el scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Envolver el contenido principal
+    const main = document.querySelector('main');
+    if (main) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'content-wrapper';
+        main.parentNode.insertBefore(wrapper, main);
+        wrapper.appendChild(main);
     }
 
-    // Funcionalidad de scroll suave para los enlaces de navegación (si existieran)
-    // Asumo que podrías tener enlaces de navegación dentro del 'header' o en alguna parte
-    // que apunten a secciones con IDs.
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Asegúrate de que el enlace no sea parte de .enlaces-externos o .rutas-list si no quieres scroll suave para ellos
-            if (!this.closest('.enlaces-externos') && !this.closest('.rutas-list')) {
-                e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-
-                const targetId = this.getAttribute('href'); // Obtener el ID del destino (e.g., "#introduccion")
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    // Scroll suave hasta el elemento
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-
-                    // Añadir la clase 'is-visible' inmediatamente al elemento objetivo
-                    // para que aparezca si se navega a él directamente
-                    targetElement.classList.add('is-visible');
-                }
-            }
-        });
+    // Efecto parallax más suave
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrolled = window.pageYOffset;
+                document.body.style.backgroundPositionY = -(scrolled * 0.05) + 'px';
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
+
+    // Animación del título principal
+    const mainTitle = document.querySelector('header h1');
+    if (mainTitle) {
+        mainTitle.addEventListener('mouseover', () => {
+            mainTitle.style.animation = 'none';
+            setTimeout(() => {
+                mainTitle.style.animation = 'neonPulse 2s infinite';
+            }, 10);
+        });
+    }
 });

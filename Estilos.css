@@ -3,19 +3,12 @@
  * Estilos Generales y Reseteos
  * ========================================
  */
-html,
-body {
-    overflow-x: hidden; /* Evita barras de scroll horizontales indeseadas */
-}
-
-body {
-    color-scheme: light dark;
-    font-family: 'Segoe UI', Arial, sans-serif; /* Cambiado a una fuente más moderna */
-    margin: auto;
-    padding: 20px;
-    background-color: var(--bg-main); /* Usando variable */
-    color: var(--text-main); /* Usando variable */
-    transition: background 0.4s, color 0.4s; /* Transición suave para cambios de tema */
+html, body {
+    background-color: var(--bg-main);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--text-main);
 }
 
 /*
@@ -55,21 +48,19 @@ body {
  * ========================================
  */
 header {
-    background-color: var(--bg-header); /* Usando variable */
-    color: var(--text-header); /* Usando variable */
+    background-color: var(--bg-main);
+    padding: 2rem;
     text-align: center;
-    padding: 1.5em 0;
-    border: 2px solid var(--border); /* Usando variable */
-    border-radius: 5px;
-    box-shadow: 0 2px 12px rgba(0, 229, 255, 0.15); /* Sombra neón */
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
 header h1 {
+    color: var(--text-header);
+    margin: 0;
     font-size: 2.5em;
-    font-weight: bold;
-    letter-spacing: 2px; /* Aumentado el espaciado para un efecto neón */
-    color: var(--text-header); /* Usando variable */
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); /* Sombra neón en el título */
+    text-shadow: 0 0 10px var(--text-header);
 }
 
 h1 {
@@ -81,34 +72,29 @@ h1 {
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-  background-color: var(--bg-nav);
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 229, 255, 0.1); /* Sombra con color neón */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 18px;
-}
-
-/* Estilos para enlaces del HEADER (NAVEGACIÓN) - AHORA BLANCO OPACO -> BLANCO BRILLANTE */
 nav ul li a {
-  color: var(--link-opaque); /* Blanco opaco */
-  text-decoration: none;
-  padding: 10px 0;
-  display: inline-block;
-  font-weight: 500;
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Transición suave */
-  text-shadow: 0 1px 8px var(--link-shadow-opaque); /* Sombra tenue */
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: var(--link-bright); /* Blanco brillante */
-  text-shadow: 0 2px 12px var(--link-shadow-bright); /* Sombra brillante */
+    background-color: var(--text-header);
+    color: var(--bg-main);
 }
+
 p {
     font-size: 18px;
     padding: 15px;
@@ -130,21 +116,21 @@ main {
 }
 
 section {
-    margin-bottom: 3em;
-    padding: 1.5em;
-    border: 2px solid var(--border); /* Usando variable */
+    background-color: var(--bg-section);
+    border: 2px solid var(--border);
     border-radius: 10px;
-    text-align: center;
-    background-color: rgba(0, 229, 255, 0.07); /* Fondo ligeramente neón */
-    box-shadow: 0 1px 8px rgba(0, 229, 255, 0.07); /* Sombra neón */
+    padding: 2rem;
+    margin-bottom: 2rem;
+    opacity: 1;
+    transform: none;
+    transition: transform 0.8s var(--transition-ease),
+                opacity 0.8s var(--transition-ease);
 }
 
 h2 {
-    color: var(--accent); /* Usando variable */
-    font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4); /* Sombra neón */
+    color: var(--text-header);
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 ul {
@@ -159,14 +145,41 @@ ul li {
 }
 
 footer {
-    background-color: var(--bg-footer); /* Usando variable */
-    color: var(--text-header); /* Usando variable para consistencia */
-    text-align: center;
-    padding: 1.5em 0;
     position: relative;
-    border: 2px solid var(--border); /* Usando variable */
-    border-radius: 0 0 12px 12px; /* Más redondeado abajo */
-    box-shadow: 0 -2px 12px rgba(0, 229, 255, 0.1); /* Sombra neón */
+    z-index: 1;
+    background-color: var(--bg-main);
+    padding: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 -5px 15px rgba(0, 229, 255, 0.1);
+    opacity: 1;
+    transform: none;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer p {
+    margin: 0.5rem 0;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+body.js-ready footer {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+body.js-ready footer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.js-ready footer.not-visible {
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 /* Estilos para el contenedor principal de los enlaces externos */
@@ -195,12 +208,13 @@ footer {
     object-fit: contain;
     border-radius: 50%; /* Imágenes de iconos circulares */
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); /* Sombra neón para iconos */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Estilos que se aplican a las imágenes cuando el cursor del ratón pasa por encima */
 .enlaces-externos img:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(5deg);
     box-shadow: 0 0 25px rgba(0, 229, 255, 0.6); /* Sombra más intensa al hover */
 }
 
@@ -247,13 +261,14 @@ footer {
     border: 1px solid var(--border); /* Usando variable */
     border-radius: 8px; /* Ligeramente más redondeado */
     box-shadow: 0 4px 24px rgba(0, 229, 255, 0.18); /* Sombra neón */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Estilos que se aplican a las imágenes de "certificados-section" cuando el cursor del ratón pasa por encima */
 #certificados-section img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 32px 4px rgba(0, 170, 255, 0.18); /* Sombra neón al hacer hover */
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.3);
 }
 
 /*
@@ -276,11 +291,11 @@ footer {
     100% { transform: translateX(0); }
 }
 
-/* Animación de entrada: Fade In Up */
+/* Animaciones más suaves */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -288,11 +303,10 @@ footer {
     }
 }
 
-/* Animación de entrada: Fade In Left */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-20px);
     }
     to {
         opacity: 1;
@@ -300,62 +314,175 @@ footer {
     }
 }
 
-/* Animación de entrada: Fade In Right */
 @keyframes fadeInRight {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(20px);
     }
     to {
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+/* Animación para el título principal */
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(0, 229, 255, 0.8), 0 0 30px rgba(0, 229, 255, 0.6); }
+    100% { text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); }
+}
+
+/* Animación para los bordes de las secciones */
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 30px rgba(0, 229, 255, 0.4); }
+    100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); }
+}
+
+/* Animación para las habilidades */
+@keyframes skillsAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animación para el menú de navegación */
+@keyframes menuFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
 /*
  * ========================================
- * Control de visibilidad y animaciones con JavaScript
+ * Animaciones de Entrada
  * ========================================
  */
 
-/* Ocultar secciones y footer por defecto antes de que JavaScript actúe */
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+/* Estado inicial de las secciones antes de JavaScript */
 body:not(.js-ready) section,
 body:not(.js-ready) footer {
+    opacity: 1;
+    transform: none;
+}
+
+/* Estado inicial cuando JavaScript está listo */
+body.js-ready section {
     opacity: 0;
     transform: translateY(30px);
 }
 
-/* Estilos de TRANSICIÓN para las secciones cuando JavaScript está activo */
-body.js-ready section,
-body.js-ready footer {
-    opacity: 0; /* Inicialmente oculto */
-    transition: opacity var(--transition-duration) var(--transition-ease),
-                transform var(--transition-duration) var(--transition-ease);
-}
-
-/* Cuando la clase 'is-visible' se añade, aplica la animación de entrada */
 body.js-ready section.is-visible {
     opacity: 1;
     transform: translateY(0);
-    animation: fadeInUp var(--transition-duration) var(--transition-ease) forwards;
 }
 
-/* Opcional: animar secciones alternas de diferente manera */
-body.js-ready section:nth-of-type(odd).is-visible {
-    animation: fadeInLeft var(--transition-duration) var(--transition-ease) forwards;
+body.js-ready section.not-visible {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-body.js-ready section:nth-of-type(even).is-visible {
-    animation: fadeInRight var(--transition-duration) var(--transition-ease) forwards;
+/* Animaciones específicas para secciones alternadas */
+body.js-ready section:nth-child(odd).not-visible {
+    transform: translateX(-30px);
 }
 
-/* Animación para el footer */
-body.js-ready footer.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeInUp var(--transition-duration) var(--transition-ease) forwards;
+body.js-ready section:nth-child(even).not-visible {
+    transform: translateX(30px);
 }
 
+body.js-ready section:nth-child(odd).is-visible,
+body.js-ready section:nth-child(even).is-visible {
+    transform: translateX(0);
+}
+
+/* Animaciones para elementos dentro de las secciones */
+.is-visible .animate-item {
+    animation: slideInFromBottom 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.not-visible .animate-item {
+    animation: fadeOut 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Aplicando animaciones a elementos específicos */
+#mis-habilidades ul li {
+    opacity: 0;
+    animation: skillsAppear 0.5s ease-out forwards;
+}
+
+/* Retardo para cada habilidad */
+#mis-habilidades ul li:nth-child(1) { animation-delay: 0.1s; }
+#mis-habilidades ul li:nth-child(2) { animation-delay: 0.2s; }
+#mis-habilidades ul li:nth-child(3) { animation-delay: 0.3s; }
+#mis-habilidades ul li:nth-child(4) { animation-delay: 0.4s; }
+#mis-habilidades ul li:nth-child(5) { animation-delay: 0.5s; }
+#mis-habilidades ul li:nth-child(6) { animation-delay: 0.6s; }
+#mis-habilidades ul li:nth-child(7) { animation-delay: 0.7s; }
+#mis-habilidades ul li:nth-child(8) { animation-delay: 0.8s; }
+#mis-habilidades ul li:nth-child(9) { animation-delay: 0.9s; }
+#mis-habilidades ul li:nth-child(10) { animation-delay: 1s; }
+#mis-habilidades ul li:nth-child(11) { animation-delay: 1.1s; }
+#mis-habilidades ul li:nth-child(12) { animation-delay: 1.2s; }
+
+nav ul li:nth-child(1) { animation-delay: 0s; }
+nav ul li:nth-child(2) { animation-delay: 0.2s; }
+nav ul li:nth-child(3) { animation-delay: 0.4s; }
+nav ul li:nth-child(4) { animation-delay: 0.6s; }
+nav ul li:nth-child(5) { animation-delay: 0.8s; }
+nav ul li:nth-child(6) { animation-delay: 1s; }
 
 /*
  * ========================================
@@ -415,7 +542,8 @@ body.js-ready footer.is-visible {
     }
 
     footer {
-        padding: 1em 0;
+        margin: 1rem;
+        padding: 1rem;
     }
 
     .enlaces-externos img {
@@ -435,6 +563,11 @@ body.js-ready footer.is-visible {
 
     #certificados-section h3 {
         font-size: 1.1em;
+    }
+
+    .certificados-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
@@ -460,4 +593,145 @@ body.js-ready footer.is-visible {
         padding: 12px;
         font-size: 0.95rem;
     }
+}
+
+/* Contenedor principal para evitar desbordamiento */
+.content-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-main);
+}
+
+/* Mejoras para el rendimiento */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Estilos para la sección de certificados */
+.certificados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.certificados-grid div {
+    background: rgba(0, 229, 255, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificados-grid div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+}
+
+.certificados-grid h3 {
+    color: var(--text-header);
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.certificados-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.certificados-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Estilos para la sección de habilidades */
+#mis-habilidades ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#mis-habilidades li {
+    background: rgba(0, 229, 255, 0.05);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 120px;
+}
+
+#mis-habilidades li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+    background: rgba(0, 229, 255, 0.1);
+}
+
+/* Estilos para la sección de rutas y proyectos */
+.rutas-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.rutas-list h3 {
+    color: var(--text-header);
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.3em;
+    text-align: center;
+    width: 100%;
+}
+
+.rutas-list a {
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(0, 229, 255, 0.05);
+    text-align: center;
+    min-width: 250px;
+}
+
+.rutas-list a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--text-header);
+}
+
+/* Estilos para el encabezado de Enlaces Externos */
+#rutas-proyectos h3 {
+    color: var(--text-header);
+    text-align: center;
+    margin: 2rem 0 1.5rem 0;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+#rutas-proyectos h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--text-header);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
