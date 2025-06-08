@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luisantonio3005.github.io/Pagina-delitos-informaticos/sitemap.xml 
