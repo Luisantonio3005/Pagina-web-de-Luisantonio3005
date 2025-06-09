@@ -1,85 +1,130 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Marcar el body como listo para las animaciones
-    document.body.classList.add('js-ready');
+    try {
+        // Marcar el body como listo para las animaciones
+        document.body.classList.add('js-ready');
 
-    // Configuración del Intersection Observer
-    const observerOptions = {
-        root: null, // usar el viewport
-        rootMargin: '-50px', // margen negativo para activar un poco antes
-        threshold: 0.1 // activar cuando al menos 10% de la sección sea visible
-    };
+        // Configuración del Intersection Observer con opciones optimizadas
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50px',
+            threshold: [0.1, 0.5],
+            trackVisibility: true,
+            delay: 100
+        };
 
-    // Callback para el observer
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Cuando la sección entra en vista
-                entry.target.classList.add('is-visible');
-                entry.target.classList.remove('not-visible');
-            } else {
-                // Cuando la sección sale de vista
-                entry.target.classList.remove('is-visible');
-                entry.target.classList.add('not-visible');
-            }
-        });
-    };
+        // Callback optimizado para el observer
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add('is-visible');
+                        entry.target.classList.remove('not-visible');
+                    });
+                } else {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.remove('is-visible');
+                        entry.target.classList.add('not-visible');
+                    });
+                }
+            });
+        };
 
-    // Crear el observer
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+        // Crear el observer con manejo de errores
+        let observer;
+        try {
+            observer = new IntersectionObserver(observerCallback, observerOptions);
+        } catch (error) {
+            console.warn('IntersectionObserver no soportado:', error);
+            // Fallback para navegadores que no soportan IntersectionObserver
+            document.querySelectorAll('section, footer').forEach(element => {
+                element.classList.add('is-visible');
+            });
+            return;
+        }
 
-    // Observar todas las secciones y el footer
-    document.querySelectorAll('section, footer').forEach(element => {
-        observer.observe(element);
-        // Asegurarse de que el elemento comience como no visible
-        element.classList.add('not-visible');
-    });
+        // Observar elementos con debounce para mejor rendimiento
+        const observeElements = () => {
+            document.querySelectorAll('section, footer').forEach(element => {
+                observer.observe(element);
+                element.classList.add('not-visible');
+            });
+        };
 
-    // Función para el scroll suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        // Scroll suave optimizado
+        const smoothScroll = (e) => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                const duration = 1000;
+                let start = null;
+
+                const animation = (currentTime) => {
+                    if (start === null) start = currentTime;
+                    const timeElapsed = currentTime - start;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                };
+
+                // Función de easing para scroll más suave
+                const ease = (t, b, c, d) => {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                };
+
+                requestAnimationFrame(animation);
             }
+        };
+
+        // Aplicar scroll suave a los enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', smoothScroll);
         });
-    });
 
-    // Envolver el contenido principal
-    const main = document.querySelector('main');
-    if (main) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'content-wrapper';
-        main.parentNode.insertBefore(wrapper, main);
-        wrapper.appendChild(main);
-    }
+        // Optimización del efecto parallax
+        let ticking = false;
+        const parallaxEffect = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    document.body.style.backgroundPositionY = `${-(scrolled * 0.05)}px`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
 
-    // Efecto parallax más suave
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                document.body.style.backgroundPositionY = -(scrolled * 0.05) + 'px';
-                ticking = false;
-            });
-            ticking = true;
+        // Usar passive event listener para mejor rendimiento
+        window.addEventListener('scroll', parallaxEffect, { passive: true });
+
+        // Animación del título principal optimizada
+        const mainTitle = document.querySelector('header h1');
+        if (mainTitle) {
+            const animateTitle = () => {
+                mainTitle.style.animation = 'none';
+                requestAnimationFrame(() => {
+                    mainTitle.style.animation = 'neonPulse 2s infinite';
+                });
+            };
+
+            mainTitle.addEventListener('mouseover', animateTitle);
         }
-    });
 
-    // Animación del título principal
-    const mainTitle = document.querySelector('header h1');
-    if (mainTitle) {
-        mainTitle.addEventListener('mouseover', () => {
-            mainTitle.style.animation = 'none';
-            setTimeout(() => {
-                mainTitle.style.animation = 'neonPulse 2s infinite';
-            }, 10);
+        // Iniciar observación de elementos
+        observeElements();
+
+    } catch (error) {
+        console.error('Error en la inicialización:', error);
+        // Fallback para asegurar que el contenido sea visible
+        document.querySelectorAll('section, footer').forEach(element => {
+            element.classList.add('is-visible');
         });
     }
 });
