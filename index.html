@@ -5,11 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mi Página Web - Luis Antonio Canales Guerrero</title>
-    <link rel="stylesheet" href="Estilos.css">
+    <title>Pagina-web-de-Luisantonio3005 | Luis Antonio Canales Guerrero | Desarrollador Web Profesional</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pagina-web-de-Luisantonio3005 - Sitio oficial de Luis Antonio Canales Guerrero. Desarrollador web profesional con experiencia en redes, programación y tecnologías de la información. Certificaciones en CCNA, Python, IA y más.">
+    <meta name="keywords" content="Pagina-web-de-Luisantonio3005, pagina web de luisantonio3005, pagina web de luis antonio 3005, luis antonio canales guerrero, desarrollador web, programador, redes, CCNA, Python, IA, MySQL, JavaScript, HTML5, CSS">
+    <meta name="author" content="Luis Antonio Canales Guerrero">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Luis Antonio Canales Guerrero",
+            "url": "https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/",
+            "alternateName": ["luisantonio3005", "Pagina-web-de-Luisantonio3005"],
+            "jobTitle": "Desarrollador Web Profesional",
+            "knowsAbout": ["Desarrollo Web", "Redes", "CCNA", "Python", "IA", "MySQL", "JavaScript", "HTML5", "CSS"],
+            "sameAs": [
+                "https://github.com/luisantonio3005"
+            ]
+        }
+    </script>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pagina-web-de-Luisantonio3005 | Luis Antonio Canales Guerrero | Desarrollador Web Profesional">
+    <meta property="og:description" content="Pagina-web-de-Luisantonio3005 - Sitio oficial de Luis Antonio Canales Guerrero. Desarrollador web profesional con experiencia en redes, programación y tecnologías de la información.">
+    <meta property="og:url" content="https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pagina-web-de-Luisantonio3005">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="Estilos.css" as="style">
+    <link rel="preload" href="Codigo.js" as="script">
+    <link rel="preload" href="img/logo.png" as="image">
+
+    <!-- Preconnect para recursos externos -->
+    <link rel="preconnect" href="https://luisantonio3005.github.io">
+    <link rel="dns-prefetch" href="https://luisantonio3005.github.io">
+
+    <!-- Critical CSS inline -->
+    <style>
+        /* Estilos críticos para el primer render */
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Estilos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="Estilos.css"></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
 <body>
+    <!-- Loading indicator -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
     <header>
         <h1>¡Hola, Bienvenido a mi página!</h1>
     </header>
@@ -163,7 +264,31 @@
         <p>Página Creada Por Luis Antonio Canales Guerrero</p>
     </footer>
 
-    <script src="Codigo.js"></script>
+    <!-- Scripts optimizados -->
+    <script>
+        // Eliminar loading spinner cuando la página esté lista
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            loading.style.opacity = '0';
+            setTimeout(() => {
+                loading.style.display = 'none';
+            }, 500);
+        });
+
+        // Precarga de imágenes críticas
+        const preloadImages = [
+            'img/logo.png',
+            'img/background.jpg'
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="Codigo.js" defer></script>
 </body>
 
 </html>
