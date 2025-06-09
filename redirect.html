@@ -29,7 +29,11 @@
             "knowsAbout": ["Desarrollo Web", "Redes", "CCNA", "Python", "IA", "MySQL", "JavaScript", "HTML5", "CSS"],
             "sameAs": [
                 "https://github.com/luisantonio3005"
-            ]
+            ],
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/"
+            }
         }
     </script>
 
@@ -169,6 +173,18 @@
                 console.log('Page load time:', loadTime + 'ms');
             }, 0);
         });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
     </script>
 </body>
 
