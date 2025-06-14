@@ -1,5 +1,43 @@
 /*
  * ========================================
+ * Loading Spinner
+ * ========================================
+ */
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*
+ * ========================================
  * Estilos Generales y Reseteos
  * ========================================
  */
@@ -298,14 +336,12 @@ body.js-ready footer.not-visible {
 /* Estilos para las imágenes dentro de la sección "certificados-section" */
 
 #certificados-section img {
-    max-width: 80%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border: 1px solid var(--border);
-    /* Usando variable */
     border-radius: 8px;
-    /* Ligeramente más redondeado */
     box-shadow: 0 4px 24px rgba(0, 229, 255, 0.18);
-    /* Sombra neón */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -655,19 +691,15 @@ nav ul li:nth-child(6) {
         padding: 15px;
     }
     .certificados-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1rem;
-        justify-items: center;
+        padding: 0.5rem;
     }
     .certificados-grid div {
-        width: 95vw;
-        max-width: 98vw;
-        height: auto;
-        margin: 10px;
+        padding: 0.8rem;
     }
     .certificados-grid img {
-        width: 98%;
-        height: 110px;
+        height: 180px;
     }
 }
 
@@ -726,14 +758,11 @@ nav ul li:nth-child(6) {
         font-size: 1.1em;
     }
     .certificados-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.8rem;
     }
-    .certificados-grid div {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+    .certificados-grid img {
+        height: 160px;
     }
 }
 
@@ -761,13 +790,15 @@ nav ul li:nth-child(6) {
     }
     .certificados-grid {
         grid-template-columns: 1fr;
-        padding: 0.5rem;
         gap: 1rem;
+        padding: 0.5rem;
+    }
+    .certificados-grid div {
+        max-width: 100%;
+        margin: 0 auto;
     }
     .certificados-grid img {
-        width: 98vw;
-        max-width: 100%;
-        height: 120px;
+        height: 200px;
     }
 }
 
@@ -800,10 +831,10 @@ img {
 
 .certificados-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -812,7 +843,7 @@ img {
     background-color: var(--bg-section);
     border: 2px solid var(--border);
     border-radius: 10px;
-    padding: 0.7rem;
+    padding: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -825,8 +856,8 @@ img {
 }
 
 .certificados-grid img {
-    width: 300px;
-    height: 180px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid var(--border);
