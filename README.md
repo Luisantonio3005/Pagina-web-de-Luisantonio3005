@@ -308,4 +308,11 @@ Este proyecto está bajo la Licencia MIT.
 - Se usa object-fit: cover para que todas las imágenes llenen el espacio de la tarjeta sin deformarse.
 - El grid de certificados es completamente responsivo y consistente en todos los dispositivos.
 - Mejoras en los atributos alt y title de las imágenes para SEO.
-- Ajustes en el CSS para evitar desbordamientos y asegurar que las tarjetas no se salgan de la sección. 
+- Ajustes en el CSS para evitar desbordamientos y asegurar que las tarjetas no se salgan de la sección.
+
+## Mejoras Responsivas
+
+- La sección de certificados ahora es 100% responsiva en teléfonos móviles.
+- En pantallas menores a 600px, las tarjetas de certificados se apilan verticalmente usando flexbox y ocupan el 100% del ancho de la sección.
+- Las imágenes de certificados usan width: 100% y object-fit: contain, por lo que nunca se salen de la sección ni del viewport.
+- Se reforzó el uso de box-sizing: border-box y overflow-x: hidden para evitar cualquier desbordamiento lateral. 
