@@ -315,4 +315,6 @@ Este proyecto está bajo la Licencia MIT.
 - La sección de certificados ahora es 100% responsiva en teléfonos móviles.
 - En pantallas menores a 600px, las tarjetas de certificados se apilan verticalmente usando flexbox y ocupan el 100% del ancho de la sección.
 - Las imágenes de certificados usan width: 100% y object-fit: contain, por lo que nunca se salen de la sección ni del viewport.
-- Se reforzó el uso de box-sizing: border-box y overflow-x: hidden para evitar cualquier desbordamiento lateral. 
+- Se reforzó el uso de box-sizing: border-box y overflow-x: hidden para evitar cualquier desbordamiento lateral.
+- Se añadió un bloque de CSS definitivo para móviles (max-width: 600px) usando !important en todas las propiedades clave, para asegurar que las imágenes de certificados nunca se salgan ni se recorten en la sección, sin importar el dispositivo.
+- Ahora, en móvil, las imágenes de certificados siempre se ven completas, ajustadas al ancho de la sección, sin recortes ni desbordes, gracias a object-fit: contain, width 100% y height auto. 
