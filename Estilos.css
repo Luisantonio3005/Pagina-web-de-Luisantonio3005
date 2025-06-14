@@ -806,7 +806,6 @@ nav ul li:nth-child(6) {
         width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 120px;
         object-fit: contain;
         display: block;
         margin: 0 auto;
