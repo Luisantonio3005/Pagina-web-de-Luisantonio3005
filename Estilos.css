@@ -748,7 +748,6 @@ nav ul li:nth-child(6) {
         margin: 1rem 0;
         padding: 0.8rem;
         box-sizing: border-box;
-        overflow-x: hidden;
     }
     nav ul {
         flex-direction: column;
@@ -830,6 +829,185 @@ nav ul li:nth-child(6) {
         margin: 0.3rem auto;
         padding: 0.5rem;
     }
+}
+
+@media (max-width: 600px) {
+    .certificados-grid {
+        display: block !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        overflow-x: hidden !important;
+    }
+    .certificados-grid div {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0.5rem 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    .certificados-grid img {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--border) !important;
+        background: #111 !important;
+        box-sizing: border-box !important;
+    }
+    body,
+    html {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .certificados-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        grid-template-columns: none !important;
+        gap: 1.5rem !important;
+        padding: 0.5rem !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+    .certificados-grid div {
+        width: 100%;
+        max-width: 420px !important;
+        min-width: 0 !important;
+        margin: 0 auto 1.5rem auto !important;
+        padding: 0.5rem 1rem !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .certificados-grid img {
+        width: 100% !important;
+        max-width: 400px !important;
+        min-width: 0 !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--border) !important;
+        background: #111 !important;
+        box-sizing: border-box !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+    body,
+    html {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    .certificados-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem 0.5rem !important;
+        margin: 0 auto !important;
+        justify-items: center !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .certificados-grid div {
+        width: 100%;
+        max-width: 420px !important;
+        margin: 0 auto 1.5rem auto !important;
+        padding: 0.5rem 1rem !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: var(--bg-section);
+        border: 2px solid var(--border);
+        border-radius: 10px;
+    }
+    .certificados-grid img {
+        width: 100% !important;
+        max-width: 400px !important;
+        min-width: 0 !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin: 0 auto !important;
+        border-radius: 8px !important;
+        border: 1px solid var(--border) !important;
+        background: #111 !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+    }
+}
+
+
+/* Estilos para la sección de certificados responsiva */
+
+.certificados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.certificados-grid div {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--bg-section);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.certificados-grid img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #111;
+    display: block;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 
