@@ -304,7 +304,7 @@ Este proyecto está bajo la Licencia MIT.
 
 ## Cambios recientes (junio 2024)
 
-- Todas las imágenes de certificados ahora tienen tamaño uniforme (300x180px en desktop, 98vw x 120px en móvil).
+- Todas las imágenes de certificados ahora tienen el mismo tamaño visual en todos los dispositivos (width: 100%, height: 180px, object-fit: cover), logrando una presentación uniforme tipo galería.
 - Se usa object-fit: cover para que todas las imágenes llenen el espacio de la tarjeta sin deformarse.
 - El grid de certificados es completamente responsivo y consistente en todos los dispositivos.
 - Mejoras en los atributos alt y title de las imágenes para SEO.
