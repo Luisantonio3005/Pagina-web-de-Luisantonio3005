@@ -221,7 +221,7 @@ ul li {
 
 footer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 2rem auto;
     padding: 1rem;
     box-sizing: border-box;
@@ -232,9 +232,6 @@ footer {
     border: 2px solid var(--border);
     border-radius: 10px;
     box-shadow: 0 -5px 15px rgba(0, 229, 255, 0.1);
-    opacity: 1;
-    transform: none;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-x: hidden;
 }
 
@@ -746,8 +743,12 @@ nav ul li:nth-child(6) {
         margin-bottom: 0.6em;
     }
     footer {
-        margin: 1rem;
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
         padding: 0.8rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     nav ul {
         flex-direction: column;
@@ -777,6 +778,7 @@ nav ul li:nth-child(6) {
     .certificados-grid img {
         max-width: 100%;
         height: auto;
+        object-fit: contain;
     }
     .enlaces-externos img {
         width: 56px;
@@ -804,9 +806,16 @@ nav ul li:nth-child(6) {
     }
     .certificados-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem;
     }
     .certificados-grid div {
         padding: 0.5rem;
+    }
+    .certificados-grid img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
     .enlaces-externos img {
         width: 48px;
@@ -814,10 +823,12 @@ nav ul li:nth-child(6) {
     }
     footer {
         padding: 0.8rem;
+        margin: 0.5rem 0;
     }
     footer p {
         font-size: 0.9rem;
         margin: 0.3rem auto;
+        padding: 0.5rem;
     }
 }
 
@@ -825,10 +836,11 @@ nav ul li:nth-child(6) {
 /* Contenedor principal para evitar desbordamiento */
 
 .content-wrapper {
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
     width: 100%;
     background-color: var(--bg-main);
+    box-sizing: border-box;
 }
 
 
@@ -854,6 +866,8 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .certificados-grid div {
@@ -877,7 +891,7 @@ img {
     width: 100%;
     height: auto;
     max-width: 300px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: #111;
