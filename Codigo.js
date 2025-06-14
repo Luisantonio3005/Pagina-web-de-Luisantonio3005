@@ -1,4 +1,3 @@
-console.log("Página Creada por Luis Antonio Canales Guerrero");
 document.addEventListener('DOMContentLoaded', () => {
     try {
         // Marcar el body como listo para las animaciones

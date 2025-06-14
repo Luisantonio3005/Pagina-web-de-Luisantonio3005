@@ -2,7 +2,7 @@
 
 ## Optimizaciones de Rendimiento Implementadas
 
-### Optimizaciones en HTML (index.html)
+### Optimizaciones en HTML index.html
 - Implementación de preload para recursos críticos
 - CSS crítico inline para el primer render
 - Optimización de carga de estilos con `media="print" onload`
@@ -10,7 +10,7 @@
 - Precarga de imágenes críticas
 - Optimización de meta tags para SEO
 
-### Optimizaciones en CSS (Estilos.css)
+### Optimizaciones en CSS Estilos.css
 - Sistema de variables CSS para mejor mantenimiento
 - Optimización de animaciones con `will-change`
 - Mejora en el rendimiento de transiciones
@@ -300,4 +300,12 @@ Este proyecto está bajo la Licencia MIT.
    - [ ] Implementar PWA
    - [ ] Optimizar para Core Web Vitals
    - [ ] Mejorar la accesibilidad
-   - [ ] Implementar pruebas de rendimiento automatizadas 
+   - [ ] Implementar pruebas de rendimiento automatizadas
+
+## Cambios recientes (junio 2024)
+
+- Todas las imágenes de certificados ahora tienen tamaño uniforme (300x180px en desktop, 98vw x 120px en móvil).
+- Se usa object-fit: cover para que todas las imágenes llenen el espacio de la tarjeta sin deformarse.
+- El grid de certificados es completamente responsivo y consistente en todos los dispositivos.
+- Mejoras en los atributos alt y title de las imágenes para SEO.
+- Ajustes en el CSS para evitar desbordamientos y asegurar que las tarjetas no se salgan de la sección. 
