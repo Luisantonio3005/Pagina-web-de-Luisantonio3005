@@ -318,4 +318,26 @@ Este proyecto está bajo la Licencia MIT.
 - Se reforzó el uso de box-sizing: border-box y overflow-x: hidden para evitar cualquier desbordamiento lateral.
 - Se añadió un bloque de CSS definitivo para móviles (max-width: 600px) usando !important en todas las propiedades clave, para asegurar que las imágenes de certificados nunca se salgan ni se recorten en la sección, sin importar el dispositivo.
 - Ahora, en móvil, las imágenes de certificados siempre se ven completas, ajustadas al ancho de la sección, sin recortes ni desbordes, gracias a object-fit: contain, width 100% y height auto.
-- Se reemplazó el bloque de CSS para móviles: ahora se usa width: 100% en los contenedores internos y solo width: 100vw en html, body, eliminando el desbordamiento horizontal en móvil y asegurando que la sección de certificados y sus imágenes nunca se salgan del viewport. 
+- Se reemplazó el bloque de CSS para móviles: ahora se usa width: 100% en los contenedores internos y solo width: 100vw en html, body, eliminando el desbordamiento horizontal en móvil y asegurando que la sección de certificados y sus imágenes nunca se salgan del viewport.
+
+## Cambios Recientes
+
+### Mejoras de Diseño y Responsividad
+- Centrado de todos los párrafos y contenido
+- Centrado del footer y sección de contacto
+- Implementación de navegación suave con JavaScript
+- Mejora de la visualización en dispositivos móviles
+
+### Ajustes de Imágenes
+- Aumento del tamaño de los iconos de enlaces externos:
+  - Tamaño base: 64x64 píxeles
+  - Tablets: 56x56 píxeles
+  - Móviles: 48x48 píxeles
+- Mejora del espaciado entre iconos
+- Optimización de la visualización en diferentes dispositivos
+
+### Optimizaciones Técnicas
+- Prevención de desbordamiento horizontal
+- Mejora del rendimiento en dispositivos móviles
+- Optimización de imágenes y texto
+- Implementación de scroll suave 

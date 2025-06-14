@@ -120,6 +120,63 @@ document.addEventListener('DOMContentLoaded', () => {
         // Iniciar observación de elementos
         observeElements();
 
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        // Add click event listener to each link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Get the target section id from the href attribute
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                // Scroll to the target section smoothly
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update active link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        const loading = document.getElementById('loading');
+        if (loading) {
+            window.addEventListener('load', function() {
+                loading.style.opacity = '0';
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            });
+        }
+
     } catch (error) {
         console.error('Error en la inicialización:', error);
         // Fallback para asegurar que el contenido sea visible
