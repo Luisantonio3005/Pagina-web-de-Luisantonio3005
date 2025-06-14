@@ -775,36 +775,46 @@ nav ul li:nth-child(6) {
         margin: 0;
         padding: 0;
     }
-    header {
-        padding: 0.7rem 0;
-    }
-    main {
-        padding: 5px;
-        max-width: 100vw;
+    main,
+    section,
+    #certificados-section {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
-    section {
-        padding: 5px;
+    .certificados-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
-    #certificados-section,
-    .certificados-grid,
     .certificados-grid>div {
         width: 100%;
         max-width: 100%;
+        margin: 0 0 1rem 0;
+        padding: 0.5rem 0;
         box-sizing: border-box;
         overflow-x: hidden;
-        margin: 0;
-        padding: 0;
     }
     .certificados-grid img {
-        width: 100% !important;
+        width: 100%;
         max-width: 100%;
-        height: auto !important;
-        object-fit: contain !important;
+        height: auto;
+        object-fit: contain;
         display: block;
         margin: 0 auto;
         box-sizing: border-box;
         background: #111;
+    }
+    header {
+        padding: 0.7rem 0;
     }
     h1 {
         font-size: 1.7rem;
