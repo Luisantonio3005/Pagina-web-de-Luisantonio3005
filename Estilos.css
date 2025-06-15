@@ -44,20 +44,16 @@
 
 html,
 body {
-    background-color: var(--bg-main);
+    width: 100%;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    position: relative;
+    background-color: var(--bg-main);
     color: var(--text-main);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -89,6 +85,18 @@ body {
     --float-duration-y: 3s;
     --float-duration-x: 4s;
     --float-ease: ease-in-out;
+    /* Variables para animaciones */
+    --animation-duration: 1.5s;
+    --animation-timing: ease-in-out;
+    --animation-delay: 0.2s;
+    /* Variables para el menú de navegación */
+    --nav-button-bg: transparent;
+    --nav-button-hover-bg: var(--text-header);
+    --nav-button-active-bg: var(--text-header);
+    --nav-button-border: 2px solid var(--border);
+    --nav-button-radius: 8px;
+    --nav-button-padding: 0.8rem 1.2rem;
+    --nav-button-transition: all 0.3s ease;
 }
 
 
@@ -131,30 +139,81 @@ h1 {
 }
 
 nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
     list-style: none;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav ul li {
+    width: 100%;
+    position: relative;
 }
 
 nav ul li a {
-    padding: 0.5rem 1rem;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    padding: var(--nav-button-padding);
     color: var(--text-main);
     text-decoration: none;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    will-change: transform, background-color;
+    background: var(--nav-button-bg);
+    border: var(--nav-button-border);
+    border-radius: var(--nav-button-radius);
+    transition: var(--nav-button-transition);
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
 }
 
 nav ul li a:hover {
-    background-color: var(--text-header);
+    background: var(--nav-button-hover-bg);
     color: var(--bg-main);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2);
+}
+
+nav ul li a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 229, 255, 0.1);
+}
+
+nav ul li a.active {
+    background: var(--nav-button-active-bg);
+    color: var(--bg-main);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0, 229, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+nav ul li a:hover::before {
+    left: 100%;
+}
+
+nav ul li a:focus-visible {
+    outline: 3px solid var(--text-header);
+    outline-offset: 2px;
 }
 
 p {
@@ -271,18 +330,21 @@ body.js-ready footer.not-visible {
 /* Estilos para el contenedor de los iconos de los enlaces externos */
 
 .enlaces-externos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
     gap: 2rem;
     padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
 /* Estilos para cada enlace individual dentro del contenedor de enlaces externos */
 
 .enlaces-externos a {
-    display: inline-block;
+    display: grid;
+    place-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -293,7 +355,10 @@ body.js-ready footer.not-visible {
     height: 64px;
     object-fit: contain;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border);
+    background: rgba(0, 229, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.1);
 }
 
 
@@ -301,6 +366,21 @@ body.js-ready footer.not-visible {
 
 .enlaces-externos img:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2), 0 0 60px rgba(0, 229, 255, 0.1);
+    border-color: var(--text-header);
+    animation: iconGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+/* Animación de brillo para los iconos */
+
+@keyframes iconGlow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2), 0 0 60px rgba(0, 229, 255, 0.1);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.6), 0 0 50px rgba(0, 229, 255, 0.4), 0 0 70px rgba(0, 229, 255, 0.2);
+    }
 }
 
 
@@ -524,7 +604,7 @@ body.js-ready footer.not-visible {
 @keyframes slideInFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-100px);
     }
     100% {
         opacity: 1;
@@ -535,7 +615,7 @@ body.js-ready footer.not-visible {
 @keyframes slideInFromRight {
     0% {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(100px);
     }
     100% {
         opacity: 1;
@@ -544,16 +624,13 @@ body.js-ready footer.not-visible {
 }
 
 @keyframes fadeOut {
-    0% {
+    from {
         opacity: 1;
         transform: translateY(0);
     }
-    80% {
-        opacity: 0.2;
-    }
-    100% {
+    to {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 }
 
@@ -571,28 +648,31 @@ body:not(.js-ready) footer {
 
 body.js-ready section {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(-100px);
+    transition: all var(--animation-duration) var(--animation-timing);
 }
 
-body.js-ready section.is-visible {
+body.js-ready section.is-visible,
+body.js-ready section:nth-child(odd).is-visible,
+body.js-ready section:nth-child(even).is-visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 body.js-ready section.not-visible {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateX(-100px);
 }
 
 
 /* Animaciones específicas para secciones alternadas */
 
-body.js-ready section:nth-child(odd).not-visible {
-    transform: translateX(-30px);
+body.js-ready section:nth-child(odd) {
+    transform: translateX(-100px);
 }
 
-body.js-ready section:nth-child(even).not-visible {
-    transform: translateX(30px);
+body.js-ready section:nth-child(even) {
+    transform: translateX(100px);
 }
 
 body.js-ready section:nth-child(odd).is-visible,
@@ -604,11 +684,11 @@ body.js-ready section:nth-child(even).is-visible {
 /* Animaciones para elementos dentro de las secciones */
 
 .is-visible .animate-item {
-    animation: slideInFromBottom 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .not-visible .animate-item {
-    animation: fadeOut 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: fadeOut 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 
@@ -616,62 +696,67 @@ body.js-ready section:nth-child(even).is-visible {
 
 #mis-habilidades ul li {
     opacity: 0;
-    animation: skillsAppear 0.5s ease-out forwards;
+    animation: slideInFromLeft var(--animation-duration) var(--animation-timing) forwards;
 }
 
 
 /* Retardo para cada habilidad */
 
 #mis-habilidades ul li:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: calc(var(--animation-delay) * 1);
 }
 
 #mis-habilidades ul li:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: calc(var(--animation-delay) * 2);
 }
 
 #mis-habilidades ul li:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: calc(var(--animation-delay) * 3);
 }
 
 #mis-habilidades ul li:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: calc(var(--animation-delay) * 4);
 }
 
 #mis-habilidades ul li:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: calc(var(--animation-delay) * 5);
 }
 
 #mis-habilidades ul li:nth-child(6) {
-    animation-delay: 0.6s;
+    animation-delay: calc(var(--animation-delay) * 6);
 }
 
 #mis-habilidades ul li:nth-child(7) {
-    animation-delay: 0.7s;
+    animation-delay: calc(var(--animation-delay) * 7);
 }
 
 #mis-habilidades ul li:nth-child(8) {
-    animation-delay: 0.8s;
+    animation-delay: calc(var(--animation-delay) * 8);
 }
 
 #mis-habilidades ul li:nth-child(9) {
-    animation-delay: 0.9s;
+    animation-delay: calc(var(--animation-delay) * 9);
 }
 
 #mis-habilidades ul li:nth-child(10) {
-    animation-delay: 1s;
+    animation-delay: calc(var(--animation-delay) * 10);
 }
 
 #mis-habilidades ul li:nth-child(11) {
-    animation-delay: 1.1s;
+    animation-delay: calc(var(--animation-delay) * 11);
 }
 
 #mis-habilidades ul li:nth-child(12) {
-    animation-delay: 1.2s;
+    animation-delay: calc(var(--animation-delay) * 12);
+}
+
+nav ul li {
+    animation: buttonFadeIn 0.5s ease-out forwards;
+    opacity: 0;
 }
 
 nav ul li:nth-child(1) {
-    animation-delay: 0s;
+    animation-delay: 0.1s;
 }
 
 nav ul li:nth-child(2) {
@@ -679,19 +764,19 @@ nav ul li:nth-child(2) {
 }
 
 nav ul li:nth-child(3) {
-    animation-delay: 0.4s;
+    animation-delay: 0.3s;
 }
 
 nav ul li:nth-child(4) {
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
 }
 
 nav ul li:nth-child(5) {
-    animation-delay: 0.8s;
+    animation-delay: 0.5s;
 }
 
 nav ul li:nth-child(6) {
-    animation-delay: 1s;
+    animation-delay: 0.6s;
 }
 
 
@@ -750,24 +835,17 @@ nav ul li:nth-child(6) {
         box-sizing: border-box;
     }
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0.5rem;
-    }
-    nav ul li {
-        width: 100%;
-        text-align: center;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding: 0.8rem;
     }
     nav ul li a {
-        width: 100%;
-        max-width: 100%;
-        text-align: center;
-        padding: 0.8rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
     }
     .certificados-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 0.5rem;
     }
     .certificados-grid div {
         width: 100%;
@@ -779,9 +857,17 @@ nav ul li:nth-child(6) {
         height: auto;
         object-fit: contain;
     }
+    .enlaces-externos {
+        grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+        gap: 1rem;
+    }
     .enlaces-externos img {
-        width: 56px;
-        height: 56px;
+        width: 48px;
+        height: 48px;
+    }
+     :root {
+        --animation-duration: 1s;
+        --animation-delay: 0.1s;
     }
 }
 
@@ -804,8 +890,6 @@ nav ul li:nth-child(6) {
         padding: 0.8rem;
     }
     .certificados-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
         padding: 0.5rem;
     }
     .certificados-grid div {
@@ -815,6 +899,9 @@ nav ul li:nth-child(6) {
         max-width: 100%;
         height: auto;
         object-fit: contain;
+    }
+    .enlaces-externos {
+        padding: 1rem;
     }
     .enlaces-externos img {
         width: 48px;
@@ -828,6 +915,14 @@ nav ul li:nth-child(6) {
         font-size: 0.9rem;
         margin: 0.3rem auto;
         padding: 0.5rem;
+    }
+    nav ul {
+        gap: 0.6rem;
+        padding: 0.6rem;
+    }
+    nav ul li a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -976,45 +1071,35 @@ nav ul li:nth-child(6) {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
-    max-width: 100%;
-    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .certificados-grid div {
+    display: grid;
+    place-items: center;
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 1rem;
     background-color: var(--bg-section);
     border: 2px solid var(--border);
     border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .certificados-grid img {
     width: 100%;
-    height: auto;
     max-width: 300px;
+    height: auto;
     object-fit: contain;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: #111;
-    display: block;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
 
 
 /* Contenedor principal para evitar desbordamiento */
 
 .content-wrapper {
-    overflow-x: hidden;
     position: relative;
     width: 100%;
     background-color: var(--bg-main);
@@ -1044,38 +1129,29 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
-    max-width: 100%;
-    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .certificados-grid div {
+    display: grid;
+    place-items: center;
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 1rem;
     background-color: var(--bg-section);
     border: 2px solid var(--border);
     border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .certificados-grid img {
     width: 100%;
-    height: auto;
     max-width: 300px;
+    height: auto;
     object-fit: contain;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: #111;
-    display: block;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .certificados-grid h3 {
@@ -1237,8 +1313,7 @@ nav ul li a.active {
 /* Clases de utilidad */
 
 .is-visible {
-    opacity: 1 !important;
-    transform: none !important;
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
 .not-visible {
@@ -1301,4 +1376,160 @@ nav ul li a.active {
         padding: 0.25rem;
         margin: 0.25rem;
     }
+}
+
+
+/* Animación del footer */
+
+body.js-ready footer {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all var(--animation-duration) var(--animation-timing);
+}
+
+body.js-ready footer.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.js-ready footer.not-visible {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+
+/* Keyframes para las animaciones */
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Aplicar animaciones a elementos específicos */
+
+.is-visible .animate-item {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.not-visible .animate-item {
+    animation: fadeOut 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+
+/* Optimización de rendimiento para animaciones */
+
+section,
+footer {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+
+/* Asegurar que las animaciones sean suaves */
+
+@media (prefers-reduced-motion: no-preference) {
+    section,
+    footer {
+        transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+
+/* Desactivar animaciones para usuarios que prefieren movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    section,
+    footer {
+        transition: none;
+        animation: none;
+    }
+     :root {
+        --animation-duration: 0s;
+        --animation-delay: 0s;
+    }
+    section,
+    footer,
+    #mis-habilidades ul li {
+        transition: none;
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* Animación de entrada para los botones */
+
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul li {
+    animation: buttonFadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+
+/* Retrasos escalonados para la animación de entrada */
+
+nav ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+nav ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(6) {
+    animation-delay: 0.6s;
 }
