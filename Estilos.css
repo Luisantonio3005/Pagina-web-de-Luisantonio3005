@@ -71,6 +71,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    /* Se elimina el font-size de aquí para evitar conflictos */
 }
 
 .site-container {
@@ -149,6 +150,8 @@ main {
     /* Espaciado responsive */
     --spacing-xs: clamp(0.5rem, 2vw, 0.75rem);
     --spacing-sm: clamp(0.75rem, 3vw, 1rem);
+    --spacing-md: clamp(1rem, 4vw, 1.5rem);
+    --spacing-lg: clamp(1.5rem, 5vw, 2rem);
     /* Tamaños de fuente responsive */
     --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
     --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
@@ -315,11 +318,13 @@ nav ul li a:focus-visible {
     }
 }
 
+
+/* Se elimina la herencia para usar una regla más específica */
+
 p,
-li,
-a {
-    font-size: var(--font-size-md);
-    color: var(--text-main);
+ul,
+ol {
+    /* font-size: inherit; */
 }
 
 main {
@@ -352,10 +357,10 @@ ul {
 }
 
 ul li {
-    margin-bottom: 0.8em;
-    font-size: 1.1em;
-    color: var(--text-main);
-    /* Usando variable */
+    margin: 0.5rem 0;
+    text-align: center;
+    padding: 0.3rem 0;
+    /* font-size: inherit; */
 }
 
 footer p {
@@ -870,7 +875,7 @@ nav ul li:nth-child(6) {
         font-size: 24px;
     }
     p {
-        font-size: 16px;
+        font-size: inherit;
         padding: 10px;
     }
     main {
@@ -886,7 +891,7 @@ nav ul li:nth-child(6) {
         margin-bottom: 0.8em;
     }
     ul li {
-        font-size: 1em;
+        font-size: inherit;
         margin-bottom: 0.6em;
     }
     footer {
@@ -945,7 +950,7 @@ nav ul li:nth-child(6) {
         padding: 0.5rem;
     }
     p {
-        font-size: 1rem;
+        font-size: inherit;
         padding: 0.8rem;
     }
     .certificados-grid {
@@ -1280,6 +1285,7 @@ img {
     transition: all 0.3s ease;
     text-align: center;
     min-width: 120px;
+    font-size: inherit;
 }
 
 #mis-habilidades li:hover {
@@ -1665,7 +1671,8 @@ h3 {
 p,
 li,
 a {
-    font-size: var(--font-size-md);
+    font-size: inherit;
+    /* Hereda de body para consistencia */
     line-height: 1.6;
 }
 
@@ -1807,10 +1814,7 @@ footer {
 @media (max-width: 400px) {
     h1,
     h2,
-    h3,
-    p,
-    li,
-    a {
+    h3 {
         font-size: 0.9rem;
     }
     nav ul li a {
@@ -2144,7 +2148,8 @@ section a {
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-section a:hover section a:focus {
+section a:hover,
+section a:focus-visible {
     color: var(--text-main);
     text-shadow: 0 0 8px var(--accent);
 }
@@ -2225,4 +2230,17 @@ section a:hover section a:focus {
         --font-size-lg: 1.75rem;
         --font-size-xl: 2.25rem;
     }
+}
+
+
+/*
+* ========================================
+* Regla Específica para Unificar el Tamaño del Texto
+* ========================================
+*/
+
+main section p,
+main section li,
+footer p {
+    font-size: 1.15rem;
 }
