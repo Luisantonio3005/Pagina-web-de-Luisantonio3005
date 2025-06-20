@@ -24,6 +24,13 @@ Se han realizado una serie de ajustes de diseño y funcionales para mejorar la e
 
 *   **Se eliminaron las redes sociales** (Instagram, YouTube, TikTok) de la sección de contacto para simplificar.
 
+### Diseño Responsivo Granular:
+
+*   **Breakpoints Detallados:** Se reemplazaron los breakpoints originales por un conjunto más granular y completo en las variables de CSS. Esto permite un control mucho más preciso sobre el diseño en una amplia gama de dispositivos, desde teléfonos muy pequeños (360px) hasta monitores de alta resolución (2560px).
+*   **Media Queries Adaptativas:** Se implementaron nuevas reglas de `media query` que utilizan estos breakpoints para ajustar dinámicamente:
+    *   **Tamaño de las Fuentes:** La tipografía se escala de forma fluida para garantizar la legibilidad en cualquier pantalla.
+    *   **Cuadrícula de Certificados:** El número de columnas de la galería de certificados se adapta automáticamente, mostrando desde una columna en los móviles más pequeños hasta cinco en los monitores más grandes, optimizando siempre el espacio disponible.
+
 Estos cambios se han implementado cuidando de no afectar la funcionalidad general del sitio.
 
 ## 🚀 Estado Actual (2025) - Optimización SEO Completa
