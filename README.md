@@ -1,4 +1,30 @@
-# Luis Antonio Canales Guerrero - Portafolio Web Profesional
+# Portafolio Web de Luis Antonio Canales Guerrero
+
+Este repositorio contiene el código fuente del portafolio web profesional de Luis Antonio Canales Guerrero, un desarrollador especializado en redes, programación e inteligencia artificial.
+
+## Resumen de Cambios Recientes
+
+Se han realizado una serie de ajustes de diseño y funcionales para mejorar la estética y la experiencia de usuario del sitio web.
+
+### Ajustes de Diseño y Layout:
+
+*   **Alineación General del Texto:** Se centró el texto en la mayor parte de la página para unificar el diseño.
+*   **Alineación de Listas:** Se ajustaron las listas para que, aunque el texto general esté centrado, estas mantengan su alineación a la izquierda para una mejor legibilidad, con excepciones en las secciones de "Proyectos" y "Redes Sociales", que ahora están centradas.
+*   **Sección "Sobre mí":** Se reestructuraron y centraron los párrafos para que coincidan con el diseño de la maqueta proporcionada.
+*   **Footer:** Se centró todo el texto dentro del pie de página para una apariencia más ordenada.
+
+### Cambios en Elementos Específicos:
+
+*   **Color de Enlaces:** Se aplicó el color azul neón característico de la página a los enlaces de texto para que sean consistentes con la identidad visual.
+*   **Brillo del Título Principal (H1):**
+    *   Se eliminó la animación de parpadeo que se activaba con el ratón.
+    *   Se reemplazó con un efecto de brillo (`text-shadow`) sutil y fijo para mantener la estética neón sin ser intrusivo.
+
+### Limpieza de Código:
+
+*   **Se eliminaron las redes sociales** (Instagram, YouTube, TikTok) de la sección de contacto para simplificar.
+
+Estos cambios se han implementado cuidando de no afectar la funcionalidad general del sitio.
 
 ## 🚀 Estado Actual (2025) - Optimización SEO Completa
 

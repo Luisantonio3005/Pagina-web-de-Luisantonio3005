@@ -100,19 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('scroll', handleParallax, { passive: true });
         };
 
-        // Configurar animación del título
-        const setupTitleAnimation = () => {
-            const mainTitle = document.querySelector('header h1');
-            if (mainTitle) {
-                mainTitle.addEventListener('mouseover', () => {
-                    mainTitle.style.animation = 'none';
-                    requestAnimationFrame(() => {
-                        mainTitle.style.animation = 'neonPulse 2s infinite';
-                    });
-                });
-            }
-        };
-
         // Configurar animación de carga
         const setupLoadingAnimation = () => {
             const loading = document.getElementById('loading');
@@ -131,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             observeElements();
             setupNavigation();
             setupParallax();
-            setupTitleAnimation();
             setupLoadingAnimation();
         };
 
