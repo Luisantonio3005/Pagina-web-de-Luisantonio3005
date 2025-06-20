@@ -1,3 +1,46 @@
 User-agent: *
 Allow: /
-Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap.xml 
+
+# Permitir acceso a recursos importantes
+Allow: /img/
+Allow: /CSS/
+Allow: /JS/
+Allow: /Pdf/
+
+# Archivos importantes para SEO
+Allow: /sitemap.xml
+Allow: /index.html
+Allow: /redirect.html
+
+# Deshabilitar acceso a archivos innecesarios
+Disallow: /img/img/
+Disallow: /Captura de pantalla*
+
+# Sitemap
+Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap.xml
+
+# Crawl-delay para ser respetuoso con el servidor
+Crawl-delay: 1
+
+# Reglas específicas para Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Reglas específicas para Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Reglas para bots de redes sociales
+User-agent: Twitterbot
+Allow: /
+Allow: /img/
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /img/
+
+User-agent: LinkedInBot
+Allow: /
+Allow: /img/ 
