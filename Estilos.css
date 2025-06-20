@@ -2244,3 +2244,262 @@ main section li,
 footer p {
     font-size: 1.15rem;
 }
+
+
+/* =============================
+   OPTIMIZACIONES PARA DISPOSITIVOS DE BAJOS RECURSOS
+   ============================= */
+
+
+/* Optimización de GPU y renderizado */
+
+@media (max-width: 768px) {
+    * {
+        will-change: auto !important;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    /* Reducir animaciones en móviles */
+    .enlaces-externos img:hover {
+        transform: scale(1.05) !important;
+        animation: none !important;
+    }
+    #certificados-section img:hover {
+        transform: scale(1.02) translateY(-5px) !important;
+    }
+    /* Optimizar sombras */
+    header,
+    section,
+    footer {
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.05) !important;
+    }
+    /* Reducir efectos de hover */
+    nav ul li a:hover {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 0 8px rgba(0, 229, 255, 0.3) !important;
+    }
+    #mis-habilidades li:hover {
+        transform: translateY(-2px) !important;
+    }
+    .rutas-list a:hover {
+        transform: translateY(-1px) !important;
+    }
+}
+
+
+/* Optimización extrema para dispositivos muy limitados */
+
+@media (max-width: 480px) {
+    /* Desactivar animaciones complejas */
+    .enlaces-externos img:hover {
+        transform: none !important;
+        animation: none !important;
+        box-shadow: 0 0 5px rgba(0, 229, 255, 0.2) !important;
+    }
+    #certificados-section img:hover {
+        transform: none !important;
+        box-shadow: 0 0 5px rgba(0, 229, 255, 0.2) !important;
+    }
+    /* Simplificar sombras */
+    header,
+    section,
+    footer {
+        box-shadow: none !important;
+        border: 1px solid var(--border) !important;
+    }
+    /* Reducir efectos de texto */
+    h1,
+    h2,
+    h3 {
+        text-shadow: none !important;
+    }
+    /* Optimizar grid */
+    .certificados-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    .enlaces-externos {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+}
+
+
+/* Optimización para dispositivos con memoria limitada */
+
+@media (max-width: 360px) {
+    /* Eliminar efectos visuales complejos */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    /* Simplificar completamente */
+    .enlaces-externos img {
+        border: 1px solid var(--border) !important;
+        box-shadow: none !important;
+    }
+    .enlaces-externos img:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    #certificados-section img {
+        border: 1px solid var(--border) !important;
+        box-shadow: none !important;
+    }
+    #certificados-section img:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    /* Reducir padding y márgenes */
+    header,
+    section,
+    footer {
+        padding: 0.5rem !important;
+        margin: 0.5rem 0 !important;
+    }
+    .certificados-grid {
+        padding: 0.5rem !important;
+        gap: 0.5rem !important;
+    }
+    .enlaces-externos {
+        padding: 0.5rem !important;
+        gap: 0.5rem !important;
+    }
+}
+
+
+/* Optimización de carga progresiva */
+
+@media (max-width: 768px) {
+    /* Lazy loading optimizado */
+    img {
+        loading: lazy;
+        decoding: async;
+    }
+    /* Reducir complejidad de CSS */
+    nav ul li a::before {
+        display: none !important;
+    }
+    /* Simplificar efectos de hover */
+    nav ul li a:hover::before {
+        display: none !important;
+    }
+}
+
+
+/* Optimización para conexiones lentas */
+
+@media (max-width: 480px) {
+    /* Reducir calidad de efectos */
+    .loading-spinner {
+        border-width: 3px !important;
+    }
+    /* Simplificar animaciones */
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    /* Eliminar efectos innecesarios */
+    .footer-container h3::after {
+        display: none !important;
+    }
+    #rutas-proyectos h3::after {
+        display: none !important;
+    }
+}
+
+
+/* Optimización de memoria */
+
+@media (max-width: 768px) {
+    /* Reducir uso de GPU */
+    * {
+        transform-style: flat !important;
+    }
+    /* Simplificar gradientes */
+    nav ul li a::before {
+        background: none !important;
+    }
+    /* Reducir complejidad de sombras */
+    .enlaces-externos img:hover {
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.3) !important;
+    }
+}
+
+
+/* Optimización para batería */
+
+@media (max-width: 480px) {
+    /* Reducir animaciones que consumen batería */
+    * {
+        animation-duration: 0.1s !important;
+    }
+    /* Simplificar efectos de hover */
+    nav ul li a:hover,
+    .enlaces-externos img:hover,
+    #certificados-section img:hover,
+    #mis-habilidades li:hover,
+    .rutas-list a:hover {
+        transition: none !important;
+    }
+}
+
+
+/* Optimización de renderizado */
+
+@media (max-width: 768px) {
+    /* Forzar composición de capas */
+    header,
+    section,
+    footer {
+        transform: translateZ(0);
+    }
+    /* Optimizar reflow */
+    .certificados-grid {
+        contain: layout style paint;
+    }
+    .enlaces-externos {
+        contain: layout style paint;
+    }
+}
+
+
+/* Optimización final para dispositivos muy limitados */
+
+@media (max-width: 320px) {
+    /* Modo ultra-ligero */
+    * {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    /* Solo mantener bordes básicos */
+    header,
+    section,
+    footer {
+        border: 1px solid var(--border) !important;
+    }
+    .enlaces-externos img,
+    #certificados-section img {
+        border: 1px solid var(--border) !important;
+    }
+    /* Reducir espaciado al mínimo */
+    header,
+    section,
+    footer {
+        padding: 0.25rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    .certificados-grid,
+    .enlaces-externos {
+        padding: 0.25rem !important;
+        gap: 0.25rem !important;
+    }
+}
