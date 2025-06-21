@@ -354,17 +354,18 @@
             <section id="contacto">
                 <h2>Información de contacto profesional</h2>
                 <div class="contact-info" itemscope itemtype="https://schema.org/ContactPoint">
-                    <p><strong>Correo electrónico:</strong> <a href="mailto:luisantoniocg3005@outlook.com" itemprop="email">luisantoniocg3005@outlook.com</a></p>
-                    <p><strong>Teléfono:</strong> <a href="tel:+525574797052" itemprop="telephone">+52 55 7479 7052</a></p>
-                    <p><strong>Ubicación:</strong> <span itemprop="addressCountry">México</span></p>
-                    <p><strong>Disponibilidad:</strong> <span itemprop="availableLanguage">Español, Inglés básico</span></p>
-                </div>
-
-                <div class="social-links">
-                    <h3>Redes Sociales Profesionales</h3>
-                    <ul>
-                        <li><a href="https://github.com/luisantonio3005" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Luis Antonio Canales Guerrero">GitHub</a></li>
-                    </ul>
+                    <div class="contact-item">
+                        <h3>Correo electrónico:</h3>
+                        <a href="mailto:luisantoniocg3005@outlook.com" itemprop="email" class="contact-button">luisantoniocg3005@outlook.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Teléfono:</h3>
+                        <a href="tel:+525574797052" itemprop="telephone" class="contact-button">+52 55 7479 7052</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>GitHub:</h3>
+                        <a href="https://github.com/luisantonio3005" target="_blank" rel="noopener noreferrer" class="contact-button">luisantonio3005</a>
+                    </div>
                 </div>
             </section>
 
@@ -422,108 +423,8 @@
         </footer>
     </div>
 
-    <!-- Scripts optimizados para SEO -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Luis Antonio Canales Guerrero - Portafolio",
-            "url": "https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/",
-            "description": "Portafolio profesional de Luis Antonio Canales Guerrero, desarrollador web especializado en redes, programación e IA",
-            "author": {
-                "@type": "Person",
-                "name": "Luis Antonio Canales Guerrero"
-            },
-            "publisher": {
-                "@type": "Person",
-                "name": "Luis Antonio Canales Guerrero"
-            },
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
-        }
-    </script>
-
-    <script>
-        // Optimización de rendimiento y SEO
-        document.addEventListener('DOMContentLoaded', function() {
-            // Eliminar loading spinner cuando la página esté lista
-            const loading = document.getElementById('loading');
-            if (loading) {
-                loading.style.opacity = '0';
-                setTimeout(() => {
-                    loading.style.display = 'none';
-                }, 500);
-            }
-
-            // Lazy loading para imágenes
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.src = img.dataset.src || img.src;
-                            img.classList.remove('lazy');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-
-                images.forEach(img => imageObserver.observe(img));
-            }
-
-            // Mejorar accesibilidad de navegación
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Analytics y métricas de rendimiento
-            if ('performance' in window) {
-                window.addEventListener('load', function() {
-                    setTimeout(function() {
-                        const perfData = performance.getEntriesByType('navigation')[0];
-                        console.log('Tiempo de carga de la página:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
-                    }, 0);
-                });
-            }
-        });
-
-        // Precarga de imágenes críticas optimizada
-        const preloadImages = [
-            'img/CCNA Conceptos básicos de redes.png',
-            'img/CCNA Fundamentos de Conmutación.png',
-            'img/CCNAv7 Introduction to Networks.png'
-        ];
-
-        preloadImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
-        });
-    </script>
-
     <!-- Scripts Modulares - Carga en orden de dependencias -->
     <script src="js-base.js" defer></script>
-    <script src="js-mobile.js" defer></script>
-    <script src="js-ai-system.js" defer></script>
-    <script src="ai-config.js" defer></script>
-    <script src="advanced-animations.js" defer></script>
 </body>
 
 </html>

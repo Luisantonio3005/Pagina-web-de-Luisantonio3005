@@ -15,14 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const screenWidth = window.innerWidth;
             const screenHeight = window.innerHeight;
             const isSmallScreen = screenWidth <= 720 && screenHeight <= 1280;
-            const isVerySmallScreen = screenWidth <= 480 && screenHeight <= 800;
-            const isTinyScreen = screenWidth <= 360;
             const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
             const isSlowConnection = navigator.connection &&
-                (navigator.connection.effectiveType === 'slow-2g' ||
-                    navigator.connection.effectiveType === '2g');
-
-            return isSmallScreen || isVerySmallScreen || isTinyScreen || isLowMemory || isSlowConnection;
+                (navigator.connection.effectiveType === 'slow-2g' || navigator.connection.effectiveType === '2g');
+            return isSmallScreen || isLowMemory || isSlowConnection;
         };
 
         // Función de scroll suave optimizada
@@ -33,111 +29,79 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
-            const duration = isLowEndDevice() ? 400 : 600;
+            const duration = isLowEndDevice() ? 400 : 800;
             let start = null;
 
             const animation = (currentTime) => {
                 if (!start) start = currentTime;
                 const timeElapsed = currentTime - start;
                 const progress = Math.min(timeElapsed / duration, 1);
-                const easeProgress = progress * (2 - progress);
+                const easeProgress = 0.5 * (1 - Math.cos(Math.PI * progress)); // Ease in-out
                 window.scrollTo(0, startPosition + distance * easeProgress);
-
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animation);
-                }
+                if (timeElapsed < duration) requestAnimationFrame(animation);
             };
-
             requestAnimationFrame(animation);
         };
 
         // Configurar navegación
         const setupNavigation = () => {
             const navLinks = document.querySelectorAll('nav ul li a');
-
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
-
-                    // Actualizar clase activa
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-
-                    // Scroll suave
                     smoothScroll(targetId);
                 });
             });
         };
 
-        // Configuración del Intersection Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
+        // --- LAZY LOADING PARA IMÁGENES ---
+        const setupLazyLoading = () => {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-        // Función para manejar la visibilidad de elementos
-        const handleVisibility = (entries) => {
-            entries.forEach(entry => {
-                const element = entry.target;
-                if (entry.isIntersecting) {
-                    element.classList.add('is-visible');
-                    element.classList.remove('not-visible');
-                } else {
-                    element.classList.remove('is-visible');
-                    element.classList.add('not-visible');
-                }
-            });
-        };
+            if ('IntersectionObserver' in window) {
+                const lazyImageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const lazyImage = entry.target;
+                            lazyImage.classList.add('is-visible');
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
 
-        // Crear y configurar el observer
-        const observer = new IntersectionObserver(handleVisibility, observerOptions);
-
-        // Observar elementos
-        const observeElements = () => {
-            const elements = document.querySelectorAll('section, footer');
-            elements.forEach(element => {
-                observer.observe(element);
-                element.classList.add('not-visible');
-            });
-        };
-
-        // Función para forzar visibilidad de elementos críticos
-        const forceCriticalElementsVisibility = () => {
-            const nav = document.querySelector('nav');
-            if (nav) {
-                nav.style.display = 'block';
-                nav.style.opacity = '1';
-                nav.style.visibility = 'visible';
+                lazyImages.forEach(lazyImage => {
+                    lazyImageObserver.observe(lazyImage);
+                });
             }
+        };
 
-            const navUl = document.querySelector('nav ul');
-            if (navUl) {
-                navUl.style.display = 'flex';
-                navUl.style.opacity = '1';
-                navUl.style.visibility = 'visible';
-            }
+        // --- NUEVO SISTEMA DE ANIMACIÓN ESTABLE ---
+        const setupScrollAnimations = () => {
+            const elementsToAnimate = document.querySelectorAll('header, section, footer');
 
-            const navLinks = document.querySelectorAll('nav ul li a');
-            navLinks.forEach(link => {
-                link.style.display = 'flex';
-                link.style.opacity = '1';
-                link.style.visibility = 'visible';
-            });
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Animar cuando el 10% del elemento es visible
+            };
 
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'block';
-                section.style.opacity = '1';
-                section.style.visibility = 'visible';
-            });
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Una vez animado, no es necesario seguir observándolo
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
 
-            const texts = document.querySelectorAll('h1, h2, h3, p');
-            texts.forEach(text => {
-                text.style.opacity = '1';
-                text.style.visibility = 'visible';
-                text.style.display = 'block';
+            const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+            elementsToAnimate.forEach(el => {
+                // Añadir clase base para preparar la animación desde CSS
+                el.classList.add('animate-on-scroll');
+                observer.observe(el);
             });
         };
 
@@ -145,12 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const setupLoadingAnimation = () => {
             const loading = document.getElementById('loading');
             if (loading) {
-                setTimeout(() => {
+                window.addEventListener('load', () => {
                     loading.style.opacity = '0';
                     setTimeout(() => {
                         loading.style.display = 'none';
                     }, 500);
-                }, 1000);
+                });
             }
         };
 
@@ -158,10 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const init = () => {
             setupLoadingAnimation();
             setupNavigation();
-            observeElements();
-            forceCriticalElementsVisibility();
+            setupScrollAnimations(); // Activar el nuevo sistema de animación
+            setupLazyLoading(); // Activar lazy loading
 
-            // Disparar evento de inicialización completa
+            // Disparar evento de inicialización completa para otros scripts
             document.dispatchEvent(new CustomEvent('jsBaseReady'));
         };
 
