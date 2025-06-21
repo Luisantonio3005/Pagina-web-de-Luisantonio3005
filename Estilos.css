@@ -5330,3 +5330,217 @@ nav.not-visible,
         image-rendering: crisp-edges;
     }
 }
+
+
+/* ======================================== */
+
+
+/* SISTEMA DE SINCRONIZACIÓN PARA TELÉFONOS */
+
+
+/* ======================================== */
+
+
+/* Sistema que detecta si una sección ya está en viewport y evita desplazamiento innecesario */
+
+@media (max-width: 767px) {
+    /* Clase para secciones que ya están en viewport */
+    .section-in-viewport {
+        scroll-margin-top: 0 !important;
+        scroll-behavior: auto !important;
+    }
+    /* Desactivar animaciones de desplazamiento si la sección ya está visible */
+    .section-in-viewport.is-visible {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    /* Sistema de detección de viewport para navegación */
+    nav ul li a[href^="#"] {
+        transition: all 0.3s ease;
+    }
+    /* Estilo para enlaces de secciones ya visibles */
+    nav ul li a.section-visible {
+        background: var(--neon-blue);
+        color: var(--dark-bg);
+        box-shadow: 0 0 10px var(--neon-blue);
+    }
+    /* Evitar scroll automático si la sección ya está en viewport */
+    .no-scroll-needed {
+        scroll-behavior: auto !important;
+    }
+    /* Optimización para secciones que ya están visibles */
+    section.is-visible {
+        scroll-margin-top: 0 !important;
+    }
+    /* Sistema de detección de posición */
+    .viewport-detector {
+        position: relative;
+        z-index: 1;
+    }
+    /* Clases para diferentes estados de visibilidad */
+    .section-fully-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    .section-partially-visible {
+        opacity: 0.8 !important;
+        transform: none !important;
+    }
+    /* Desactivar animaciones de entrada si ya está visible */
+    .section-in-viewport.is-visible .animate-item {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    /* Sistema de navegación inteligente */
+    nav ul li a[href^="#"]:active {
+        transition: all 0.1s ease;
+    }
+    /* Indicador visual para secciones en viewport */
+    nav ul li a.section-in-viewport {
+        border-left: 3px solid var(--neon-blue);
+        padding-left: 0.8rem;
+    }
+    /* Optimización para evitar saltos */
+    html {
+        scroll-padding-top: 0;
+    }
+    /* Sistema de detección de scroll innecesario */
+    .smart-scroll {
+        scroll-behavior: auto;
+    }
+    /* Clase para secciones que no necesitan scroll */
+    .no-scroll-section {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    /* Optimización para navegación táctil */
+    nav ul li a[href^="#"] {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    /* Sistema de feedback visual sin scroll */
+    nav ul li a[href^="#"]:active {
+        transform: scale(0.95);
+        background: var(--neon-blue);
+        color: var(--dark-bg);
+    }
+    /* Desactivar animaciones si la sección ya está visible */
+    .section-already-visible {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    /* Sistema de detección de posición relativa */
+    .position-detector {
+        position: relative;
+    }
+    /* Clases para diferentes niveles de visibilidad */
+    .section-top-visible {
+        scroll-margin-top: 0 !important;
+    }
+    .section-center-visible {
+        scroll-margin-top: 0 !important;
+    }
+    .section-bottom-visible {
+        scroll-margin-top: 0 !important;
+    }
+    /* Optimización para evitar conflictos de scroll */
+    body.mobile-navigation-active {
+        overflow: hidden;
+    }
+    /* Sistema de navegación inteligente para móviles */
+    .mobile-smart-nav {
+        scroll-behavior: auto;
+    }
+    /* Clase para secciones que ya están en el viewport */
+    .in-viewport {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    /* Desactivar animaciones de entrada si ya está visible */
+    .in-viewport.is-visible {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    /* Sistema de detección de scroll innecesario */
+    .scroll-detector {
+        position: relative;
+    }
+    /* Clases para diferentes estados de navegación */
+    .nav-section-visible {
+        background: var(--neon-blue) !important;
+        color: var(--dark-bg) !important;
+    }
+    .nav-section-not-visible {
+        background: transparent;
+        color: var(--text-color);
+    }
+    /* Optimización para evitar saltos en la navegación */
+    .no-jump-nav {
+        scroll-behavior: auto !important;
+    }
+    /* Sistema de sincronización de animaciones */
+    .sync-animations {
+        transition: none !important;
+    }
+    /* Clase para secciones que no necesitan animación */
+    .no-animation-needed {
+        animation: none !important;
+        transition: none !important;
+    }
+    /* Sistema de detección de viewport para evitar scroll */
+    .viewport-check {
+        position: relative;
+    }
+    /* Clases para diferentes estados de visibilidad */
+    .fully-visible {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .partially-visible {
+        opacity: 0.8 !important;
+        transform: none !important;
+    }
+    .not-visible {
+        opacity: 0.3 !important;
+        transform: translateY(20px) !important;
+    }
+    /* Sistema de navegación sin scroll innecesario */
+    .smart-navigation {
+        scroll-behavior: auto !important;
+    }
+    /* Indicador visual para secciones en viewport */
+    .section-indicator {
+        border-left: 3px solid var(--neon-blue);
+        padding-left: 0.5rem;
+    }
+    /* Optimización para evitar conflictos */
+    .no-conflict {
+        scroll-margin-top: 0 !important;
+        scroll-padding-top: 0 !important;
+    }
+    /* Sistema de detección de posición exacta */
+    .position-exact {
+        position: relative;
+    }
+    /* Clases para diferentes posiciones en viewport */
+    .at-top {
+        scroll-margin-top: 0 !important;
+    }
+    .at-center {
+        scroll-margin-top: 0 !important;
+    }
+    .at-bottom {
+        scroll-margin-top: 0 !important;
+    }
+    /* Sistema de navegación inteligente final */
+    .final-smart-nav {
+        scroll-behavior: auto !important;
+        transition: all 0.3s ease !important;
+    }
+}

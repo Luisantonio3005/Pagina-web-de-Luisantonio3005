@@ -2,36 +2,87 @@
 
 Este repositorio contiene el código fuente del portafolio web profesional de Luis Antonio Canales Guerrero, un desarrollador especializado en redes, programación e inteligencia artificial.
 
-## Resumen de Cambios Recientes
+## 🆕 Últimos Cambios - Sistema de Navegación Móvil Inteligente (Enero 2025)
 
-Se han realizado una serie de ajustes de diseño y funcionales para mejorar la estética y la experiencia de usuario del sitio web.
+### 🎯 Problema Resuelto
+Se implementó un sistema avanzado de detección de viewport para teléfonos que elimina el problema de desplazamiento innecesario cuando una sección ya está visible en pantalla.
 
-### Ajustes de Diseño y Layout:
+### ✨ Nuevas Funcionalidades Implementadas
 
-*   **Alineación General del Texto:** Se centró el texto en la mayor parte de la página para unificar el diseño.
-*   **Alineación de Listas:** Se ajustaron las listas para que, aunque el texto general esté centrado, estas mantengan su alineación a la izquierda para una mejor legibilidad, con excepciones en las secciones de "Proyectos" y "Redes Sociales", que ahora están centradas.
-*   **Sección "Sobre mí":** Se reestructuraron y centraron los párrafos para que coincidan con el diseño de la maqueta proporcionada.
-*   **Footer:** Se centró todo el texto dentro del pie de página para una apariencia más ordenada.
+#### **Sistema de Detección de Viewport Inteligente**
+- ✅ **Detección automática** de secciones ya visibles en el viewport
+- ✅ **Navegación sin scroll** cuando la sección ya está en pantalla
+- ✅ **Sincronización perfecta** entre navegación y estado de visibilidad
+- ✅ **Feedback visual inmediato** sin animaciones innecesarias
 
-### Cambios en Elementos Específicos:
+#### **Estados de Visibilidad Avanzados**
+- **`section-fully-visible`**: Sección completamente visible
+- **`section-partially-visible`**: Sección parcialmente visible  
+- **`section-in-viewport`**: Sección en el área visible
+- **`no-scroll-needed`**: No necesita desplazamiento
+- **`section-already-visible`**: Sección ya visible (evita animaciones)
 
-*   **Color de Enlaces:** Se aplicó el color azul neón característico de la página a los enlaces de texto para que sean consistentes con la identidad visual.
-*   **Brillo del Título Principal (H1):**
-    *   Se eliminó la animación de parpadeo que se activaba con el ratón.
-    *   Se reemplazó con un efecto de brillo (`text-shadow`) sutil y fijo para mantener la estética neón sin ser intrusivo.
+#### **Navegación Inteligente para Móviles**
+- ✅ **Solo aplica en teléfonos** (`max-width: 767px`)
+- ✅ **Detección de posición exacta** en el viewport
+- ✅ **Manejo de orientación** y cambios de tamaño de pantalla
+- ✅ **Limpieza automática** de clases obsoletas
+- ✅ **Performance optimizada** con throttling
 
-### Limpieza de Código:
+#### **Indicadores Visuales Mejorados**
+- **Botones con borde azul neón** cuando la sección está visible
+- **Feedback táctil** sin scroll innecesario
+- **Estados de navegación sincronizados** en tiempo real
+- **Transiciones suaves** solo cuando es necesario
 
-*   **Se eliminaron las redes sociales** (Instagram, YouTube, TikTok) de la sección de contacto para simplificar.
+### 🔧 Archivos Modificados
 
-### Diseño Responsivo Granular:
+#### **Estilos.css**
+- ✅ Agregado sistema completo de detección de viewport
+- ✅ Clases CSS para diferentes estados de visibilidad
+- ✅ Optimizaciones específicas para teléfonos
+- ✅ Sistema de sincronización de animaciones
 
-*   **Breakpoints Detallados:** Se reemplazaron los breakpoints originales por un conjunto más granular y completo en las variables de CSS. Esto permite un control mucho más preciso sobre el diseño en una amplia gama de dispositivos, desde teléfonos muy pequeños (360px) hasta monitores de alta resolución (2560px).
-*   **Media Queries Adaptativas:** Se implementaron nuevas reglas de `media query` que utilizan estos breakpoints para ajustar dinámicamente:
-    *   **Tamaño de las Fuentes:** La tipografía se escala de forma fluida para garantizar la legibilidad en cualquier pantalla.
-    *   **Cuadrícula de Certificados:** El número de columnas de la galería de certificados se adapta automáticamente, mostrando desde una columna en los móviles más pequeños hasta cinco en los monitores más grandes, optimizando siempre el espacio disponible.
+#### **Codigo.js**
+- ✅ Implementado `setupMobileViewportDetection()`
+- ✅ Función `smartMobileNavigation()` para navegación inteligente
+- ✅ Sistema de detección de posición exacta
+- ✅ Manejo de resize y orientación
+- ✅ Observer para cambios de visibilidad en tiempo real
 
-Estos cambios se han implementado cuidando de no afectar la funcionalidad general del sitio.
+### 📱 Beneficios para Usuarios Móviles
+
+#### **Experiencia de Usuario Mejorada**
+- 🚫 **No más saltos** cuando la sección ya está visible
+- ⚡ **Navegación instantánea** sin esperas innecesarias
+- 🎯 **Feedback visual inmediato** en botones
+- 🔄 **Animaciones sincronizadas** con el estado real
+
+#### **Performance Optimizada**
+- 📉 **Menos cálculos** de scroll innecesarios
+- ⚡ **Respuesta más rápida** en navegación
+- 🔋 **Menor consumo** de batería
+- 📱 **Mejor experiencia** en dispositivos de gama baja
+
+### 🎨 Características Técnicas
+
+#### **Detección Precisa**
+- **50% de visibilidad** como umbral para considerar "en viewport"
+- **Detección de posición** (top, center, bottom)
+- **Ratio de intersección** para estados parciales
+- **Actualización en tiempo real** durante scroll
+
+#### **Manejo de Edge Cases**
+- ✅ **Cambios de orientación** del dispositivo
+- ✅ **Resize de ventana** en tiempo real
+- ✅ **Limpieza de clases** obsoletas
+- ✅ **Reconfiguración automática** del sistema
+
+#### **Compatibilidad**
+- ✅ **Solo teléfonos** (no afecta tablets/desktop)
+- ✅ **Todos los navegadores** móviles modernos
+- ✅ **Dispositivos de gama baja** optimizados
+- ✅ **Accesibilidad** mantenida
 
 ## 🚀 Estado Actual (2025) - Optimización SEO Completa
 
@@ -199,20 +250,33 @@ Pagina-web-de-Luisantonio3005/
 - Administración de redes
 - Conmutación y routing
 
-#### **Programación**
+#### **Programación y Bases de Datos**
 - Python
 - MySQL
-- GitHub y control de versiones
+- GitHub
+- Visual Studio Code
 
 #### **Inteligencia Artificial**
 - Fundamentos de IA
 - Prompting Responsable
 - IA Generativa
+- Machine Learning Básico
+
+#### **Habilidades de Informática**
+- Arquitectura de Computadoras
+- Sistemas Operativos
+- Mantenimiento de Hardware
+- Instalación de Software
+- Configuración de Sistemas
+- Troubleshooting Técnico
+- Seguridad Informática Básica
+- Virtualización
 
 #### **Herramientas de Productividad**
-- Microsoft Office (Word, PowerPoint)
+- Microsoft Word (Office 2019)
+- Microsoft PowerPoint (Office 2019)
 - IC3 Spark
-- Visual Studio Code
+- Inglés A2
 
 ### 📈 Beneficios de las Optimizaciones
 
