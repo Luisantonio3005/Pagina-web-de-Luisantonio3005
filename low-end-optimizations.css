@@ -1,0 +1,195 @@
+/* Optimizaciones específicas para dispositivos de bajos recursos */
+
+
+/* Este archivo se carga condicionalmente solo en dispositivos que lo necesiten */
+
+
+/* Detectar dispositivos de bajos recursos */
+
+@media (max-width: 720px) and (max-height: 1280px),
+(max-width: 480px) and (max-height: 800px),
+(max-width: 360px) {
+    /* Optimizaciones de rendimiento */
+    * {
+        animation-duration: 0.6s !important;
+        transition-duration: 0.4s !important;
+        will-change: auto !important;
+    }
+    /* Optimizar navegación para dispositivos de bajos recursos */
+    nav ul {
+        background: rgba(0, 0, 0, 0.8) !important;
+        border-radius: 8px !important;
+        margin: 0.5rem !important;
+        padding: 0.5rem !important;
+    }
+    nav ul li a {
+        background: rgba(0, 229, 255, 0.1) !important;
+        border: 1px solid var(--border) !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: rgba(0, 229, 255, 0.2) !important;
+        color: var(--text-header) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0, 229, 255, 0.3) !important;
+    }
+    /* Optimizar habilidades para dispositivos de bajos recursos */
+    #mis-habilidades .skill-category {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--border) !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    #mis-habilidades .skill-category li {
+        animation: fadeInLeft 0.6s ease-out !important;
+    }
+    /* Optimizar certificados */
+    .certificados-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    .certificados-grid div {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--border) !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    .certificados-grid img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .certificados-grid img:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4) !important;
+    }
+    /* Optimizar enlaces externos */
+    .enlaces-externos {
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    .enlaces-externos img {
+        transition: all 0.3s ease !important;
+    }
+    .enlaces-externos img:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4) !important;
+    }
+    /* Optimizar loading spinner */
+    .loading-spinner {
+        width: 40px !important;
+        height: 40px !important;
+        border-width: 3px !important;
+    }
+    /* Optimizar animaciones */
+    .is-visible {
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    body.js-ready section,
+    body.js-ready footer {
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+}
+
+
+/* Optimizaciones específicas para pantallas muy pequeñas */
+
+@media (max-width: 480px) and (max-height: 800px) {
+    nav ul {
+        flex-direction: column !important;
+        gap: 0.25rem !important;
+    }
+    nav ul li a {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 0.75rem !important;
+        min-width: 60px !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 0.75rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 1rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.8rem !important;
+    }
+    h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin: 0.5rem 0 !important;
+    }
+}
+
+
+/* Optimizaciones para dispositivos con pantallas muy pequeñas */
+
+@media (max-width: 360px) {
+    nav ul li a {
+        font-size: 0.75rem !important;
+        padding: 0.5rem !important;
+        min-width: 50px !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 0.5rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 0.9rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.75rem !important;
+    }
+    .certificados-grid div {
+        padding: 0.5rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    .enlaces-externos img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+
+
+/* Optimizaciones para dispositivos sin hover */
+
+@media (hover: none) and (pointer: coarse) {
+    nav ul li a:hover,
+    .enlaces-externos img:hover,
+    .certificados-grid img:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    nav ul li a:active,
+    .enlaces-externos img:active,
+    .certificados-grid img:active {
+        transform: scale(0.95) !important;
+    }
+}
+
+
+/* Optimizaciones para conexiones lentas */
+
+@media (prefers-reduced-data: reduce) {
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.2s !important;
+    }
+    img {
+        loading: lazy !important;
+    }
+}

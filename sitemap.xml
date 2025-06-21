@@ -1,61 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Página Principal -->
     <url>
         <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.png</image:loc>
-            <image:title>Certificado CCNA Conceptos básicos de redes - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Desarrollador Web Profesional</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Cisco Networking Academy en Conceptos Básicos de Redes - Validación de competencias en redes informáticas</image:caption>
-            <image:license>https://www.netacad.com/</image:license>
+            <image:title>Certificado CCNA Conceptos básicos de redes - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Conceptos Básicos de Redes obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.png</image:loc>
-            <image:title>Certificado CCNA Fundamentos de Conmutación - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Experto en Redes</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Cisco Networking Academy en Fundamentos de Conmutación - Especialización en redes de datos</image:caption>
-            <image:license>https://www.netacad.com/</image:license>
+            <image:title>Certificado CCNA Fundamentos de Conmutación - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Fundamentos de Conmutación obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNAv7%20Introduction%20to%20Networks.png</image:loc>
-            <image:title>Certificado CCNAv7 Introduction to Networks - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Especialista en Redes Cisco</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Cisco Networking Academy en Introducción a Redes - Formación profesional en redes informáticas</image:caption>
-            <image:license>https://www.netacad.com/</image:license>
+            <image:title>Certificado CCNAv7 Introduction to Networks - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy CCNAv7 Introduction to Networks obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20IC3%20Spark.png</image:loc>
-            <image:title>Certificado IC3 Spark - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Especialista en Tecnologías Digitales</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Certiport en IC3 Spark - Competencias digitales avanzadas</image:caption>
-            <image:license>https://www.certiport.com/</image:license>
+            <image:title>Certificado IC3 Spark - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Certiport IC3 Spark obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificaci%C3%B3n%20PYTHON.png</image:loc>
-            <image:title>Certificado de Python - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Desarrollador Python Profesional</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Santander Open Academy en Programación Python - Desarrollo de software y automatización</image:caption>
-            <image:license>https://www.santanderopenacademy.com/</image:license>
+            <image:title>Certificado de Python - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Santander Open Academy en Programación Python obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Fundamentos%20de%20IA.png</image:loc>
-            <image:title>Certificado Fundamentos de IA - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Especialista en Inteligencia Artificial</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado de Fundamentos de IA Generativa por Microsoft y Eduit - Formación en tecnologías de vanguardia</image:caption>
-            <image:license>https://www.microsoft.com/</image:license>
+            <image:title>Certificado Fundamentos de IA - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado de Fundamentos de IA Generativa por Microsoft y Eduit obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Prompting%20responsable%20maximiza%20la%20IA.png</image:loc>
-            <image:title>Certificado de IA Prompting Responsable - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Experto en IA Generativa</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado oficial de Santander Open Academy en Prompting Responsable - Optimización de IA Generativa</image:caption>
-            <image:license>https://www.santanderopenacademy.com/</image:license>
+            <image:title>Certificado de IA Prompting Responsable - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado oficial de Santander Open Academy en Prompting Responsable obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).png</image:loc>
-            <image:title>Certificacion Microsoft PowerPoint (Office 2019) - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Especialista en Office - Presentaciones Profesionales</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado Microsoft PowerPoint Office 2019 obtenido por Luis Antonio Canales Guerrero, especialista en Office. Formación en presentaciones profesionales y herramientas de productividad.</image:caption>
-            <image:license>https://www.certiport.com/</image:license>
+            <image:title>Certificado Microsoft PowerPoint Office 2019 - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado Microsoft PowerPoint Office 2019 obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Microsoft%20Word%20(Office%202019).png</image:loc>
-            <image:title>Certificacion Microsoft Word (Office 2019) - Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Desarrollador Web Profesional</image:title>
-            <image:caption>Página Web de Luis Antonio 3005 - Luis Antonio 3005 Página Web - Luis Antonio 3005 GitHub - Certificado Microsoft Word Office 2019 obtenido por Luis Antonio Canales Guerrero, desarrollador web profesional. Formación en procesamiento de textos y herramientas de productividad.</image:caption>
-            <image:license>https://www.certiport.com/</image:license>
+            <image:title>Certificado Microsoft Word Office 2019 - Luis Antonio Canales Guerrero - Página Web de Luis Antonio 3005</image:title>
+            <image:caption>Certificado Microsoft Word Office 2019 obtenido por Luis Antonio Canales Guerrero. Página Web de Luis Antonio 3005, Luis Antonio 3005 Página Web, Luis Antonio 3005 GitHub, Pagina Web de Luisanronio 3005, Psgina Web de Luis Antonio 3005, Pagina Web de Luisantonioc3005, Pagina Web de Luisantonioc 3005</image:caption>
         </image:image>
     </url>
+
+    <!-- Página de Test para Dispositivos de Bajos Recursos -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/test-low-end.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Proyectos CSS -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/CSS/Bordes/bordes.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/CSS/Enlaces%20a%20otras%20paginas/Enlaces%20a%20paginas.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/CSS/Hoja%20de%20Estilo%20en%20Cascada%20CSS/Hoja%20de%20Estilo%20en%20Cascada%20CSS.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/CSS/Modelo%20de%20caja/Caja.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Proyectos JavaScript -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/JS/Fundamentos%20JS.html</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Archivos PDF de Certificados -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNAv7%20Introduction%20to%20Networks.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20IC3%20Spark.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificaci%C3%B3n%20PYTHON.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Fundamentos%20de%20IA.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20Microsoft%20Word%20(Office%202019).pdf</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset> 

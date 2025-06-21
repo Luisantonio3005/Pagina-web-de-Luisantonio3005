@@ -1,20 +1,49 @@
 User-agent: *
 Allow: /
 
-# Permitir acceso a recursos importantes
-Allow: /img/
+# Permitir acceso a todos los archivos principales
+Allow: /index.html
+Allow: /test-low-end.html
+Allow: /Estilos.css
+Allow: /Codigo.js
+Allow: /low-end-optimizations.css
+
+# Permitir acceso a proyectos CSS
 Allow: /CSS/
+Allow: /CSS/Bordes/
+Allow: /CSS/Enlaces%20a%20otras%20paginas/
+Allow: /CSS/Hoja%20de%20Estilo%20en%20Cascada%20CSS/
+Allow: /CSS/Modelo%20de%20caja/
+
+# Permitir acceso a proyectos JavaScript
 Allow: /JS/
+
+# Permitir acceso a certificados PDF
 Allow: /Pdf/
 
-# Archivos importantes para SEO
-Allow: /sitemap.xml
-Allow: /index.html
-Allow: /redirect.html
+# Permitir acceso a imágenes de certificados
+Allow: /img/
+Allow: /img/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.png
+Allow: /img/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.png
+Allow: /img/CCNAv7%20Introduction%20to%20Networks.png
+Allow: /img/Certificacion%20IC3%20Spark.png
+Allow: /img/Certificaci%C3%B3n%20PYTHON.png
+Allow: /img/Certificacion%20Fundamentos%20de%20IA.png
+Allow: /img/Prompting%20responsable%20maximiza%20la%20IA.png
+Allow: /img/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).png
+Allow: /img/Certificacion%20Microsoft%20Word%20(Office%202019).png
 
-# Deshabilitar acceso a archivos innecesarios
-Disallow: /img/img/
-Disallow: /Captura de pantalla*
+# Permitir acceso a archivos de configuración
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /site.webmanifest
+
+# Bloquear archivos de desarrollo y configuración
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /README.md
+Disallow: /README-LOW-END.md
 
 # Sitemap
 Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap.xml

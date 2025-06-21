@@ -4,6 +4,98 @@ document.addEventListener('DOMContentLoaded', () => {
         const body = document.body;
         body.classList.add('js-ready');
 
+        // Función para detectar dispositivos de bajos recursos
+        const isLowEndDevice = () => {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            const isSmallScreen = screenWidth <= 720 && screenHeight <= 1280;
+            const isVerySmallScreen = screenWidth <= 480 && screenHeight <= 800;
+            const isTinyScreen = screenWidth <= 360;
+            const isLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
+            const isSlowConnection = navigator.connection &&
+                (navigator.connection.effectiveType === 'slow-2g' ||
+                    navigator.connection.effectiveType === '2g');
+
+            return isSmallScreen || isVerySmallScreen || isTinyScreen || isLowMemory || isSlowConnection;
+        };
+
+        // Cargar optimizaciones condicionalmente
+        const loadLowEndOptimizations = () => {
+            if (isLowEndDevice()) {
+                console.log('Dispositivo de bajos recursos detectado - cargando optimizaciones');
+
+                // Crear y cargar el CSS de optimizaciones
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'low-end-optimizations.css';
+                link.id = 'low-end-optimizations';
+                document.head.appendChild(link);
+            }
+        };
+
+        // Función para forzar visibilidad de elementos críticos
+        const forceCriticalElementsVisibility = () => {
+            // Forzar visibilidad de navegación
+            const nav = document.querySelector('nav');
+            if (nav) {
+                nav.style.display = 'block';
+                nav.style.opacity = '1';
+                nav.style.visibility = 'visible';
+            }
+
+            const navUl = document.querySelector('nav ul');
+            if (navUl) {
+                navUl.style.display = 'flex';
+                navUl.style.opacity = '1';
+                navUl.style.visibility = 'visible';
+            }
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.style.display = 'flex';
+                link.style.opacity = '1';
+                link.style.visibility = 'visible';
+            });
+
+            // Forzar visibilidad de habilidades
+            const skills = document.querySelector('#mis-habilidades');
+            if (skills) {
+                skills.style.display = 'block';
+                skills.style.opacity = '1';
+                skills.style.visibility = 'visible';
+            }
+
+            const skillsContainer = document.querySelector('#mis-habilidades .skills-container');
+            if (skillsContainer) {
+                skillsContainer.style.display = 'grid';
+                skillsContainer.style.opacity = '1';
+                skillsContainer.style.visibility = 'visible';
+            }
+
+            const skillCategories = document.querySelectorAll('#mis-habilidades .skill-category');
+            skillCategories.forEach(category => {
+                category.style.display = 'block';
+                category.style.opacity = '1';
+                category.style.visibility = 'visible';
+            });
+
+            // Forzar visibilidad de secciones
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'block';
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+            });
+
+            // Forzar visibilidad de textos
+            const texts = document.querySelectorAll('h1, h2, h3, p');
+            texts.forEach(text => {
+                text.style.opacity = '1';
+                text.style.visibility = 'visible';
+                text.style.display = 'block';
+            });
+        };
+
         // Configuración del Intersection Observer
         const observerOptions = {
             root: null,
@@ -45,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const startPosition = window.pageYOffset;
             const distance = targetPosition - startPosition;
-            const duration = 600;
+            const duration = isLowEndDevice() ? 400 : 600; // Más rápido en dispositivos de bajos recursos
             let start = null;
 
             const animation = (currentTime) => {
@@ -84,6 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Configurar efecto parallax optimizado
         const setupParallax = () => {
+            if (isLowEndDevice()) return; // Deshabilitar parallax en dispositivos de bajos recursos
+
             let ticking = false;
 
             const handleParallax = () => {
@@ -108,17 +202,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     loading.style.opacity = '0';
                     setTimeout(() => {
                         loading.style.display = 'none';
-                    }, 500);
+                    }, isLowEndDevice() ? 300 : 500); // Más rápido en dispositivos de bajos recursos
                 });
             }
         };
 
         // Inicializar todo
         const init = () => {
+            loadLowEndOptimizations();
+            forceCriticalElementsVisibility(); // Forzar visibilidad inmediatamente
             observeElements();
             setupNavigation();
             setupParallax();
             setupLoadingAnimation();
+
+            // Forzar visibilidad nuevamente después de un breve delay
+            setTimeout(forceCriticalElementsVisibility, 100);
+            setTimeout(forceCriticalElementsVisibility, 500);
+            setTimeout(forceCriticalElementsVisibility, 1000);
         };
 
         // Ejecutar inicialización
@@ -126,9 +227,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     } catch (error) {
         console.error('Error en la inicialización:', error);
-        // Fallback para asegurar que el contenido sea visible
-        document.querySelectorAll('section, footer').forEach(element => {
-            element.classList.add('is-visible');
-        });
     }
 });

@@ -2326,7 +2326,7 @@ footer p {
 }
 
 
-/* Optimización para dispositivos con memoria limitada */
+/* Optimización para dispositivos con poca memoria */
 
 @media (max-width: 360px) {
     /* Eliminar efectos visuales complejos */
@@ -2502,4 +2502,1169 @@ footer p {
         padding: 0.25rem !important;
         gap: 0.25rem !important;
     }
+}
+
+
+/*
+ * ========================================
+ * OPTIMIZACIONES PARA DISPOSITIVOS DE BAJOS RECURSOS
+ * Samsung Galaxy J7 Neo (SM-J701M) y similares
+ * ========================================
+ */
+
+
+/* Optimizaciones específicas para dispositivos de gama baja */
+
+@media (max-width: 720px) and (max-height: 1280px) {
+    /* Mantener animaciones pero optimizarlas */
+    * {
+        animation-duration: 0.6s !important;
+        transition-duration: 0.4s !important;
+    }
+    /* Simplificar efectos visuales pero mantener el estilo */
+    header,
+    section,
+    footer {
+        box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+        border: 2px solid var(--border);
+    }
+    /* Asegurar que la navegación sea visible */
+    nav ul {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        margin: 0.5rem;
+    }
+    nav ul li {
+        display: block !important;
+        margin: 0.25rem;
+    }
+    nav ul li a {
+        display: block !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+        background: rgba(0, 229, 255, 0.1) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 6px !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        min-width: 80px;
+        text-align: center;
+        opacity: 1 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease !important;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: rgba(0, 229, 255, 0.2) !important;
+        color: var(--text-header) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0, 229, 255, 0.3);
+    }
+    /* Asegurar que las habilidades sean visibles */
+    #mis-habilidades {
+        padding: 1rem !important;
+    }
+    #mis-habilidades .skills-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    #mis-habilidades .skill-category {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        opacity: 1 !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        color: var(--text-header) !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem !important;
+        text-align: center !important;
+    }
+    #mis-habilidades .skill-category ul {
+        display: block !important;
+        list-style: none !important;
+        padding-left: 0 !important;
+        text-align: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 !important;
+    }
+    #mis-habilidades .skill-category li {
+        display: inline-block !important;
+        color: var(--text-main) !important;
+        font-size: 0.95rem !important;
+        margin: 0.4rem !important;
+        padding: 0.6rem 1rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: rgba(0, 229, 255, 0.05) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    #mis-habilidades .skill-category li:hover {
+        background: rgba(0, 229, 255, 0.15) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    }
+    /* Optimizar certificados */
+    .certificados-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    .certificados-grid div {
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        opacity: 1 !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    .certificados-grid img {
+        max-width: 100% !important;
+        height: auto !important;
+        border-radius: 6px !important;
+        opacity: 1 !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+    .certificados-grid img:hover {
+        transform: scale(1.05) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4) !important;
+    }
+    /* Optimizar enlaces externos */
+    .enlaces-externos {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+    .enlaces-externos img {
+        width: 48px !important;
+        height: 48px !important;
+        opacity: 1 !important;
+        transition: all 0.3s ease !important;
+    }
+    .enlaces-externos img:hover {
+        transform: scale(1.1) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4) !important;
+    }
+    /* Simplificar textos */
+    h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        margin: 0.5rem 0 !important;
+    }
+    p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin: 0.5rem 0 !important;
+    }
+    /* Mantener loading spinner pero optimizado */
+    .loading-spinner {
+        width: 40px !important;
+        height: 40px !important;
+        border-width: 3px !important;
+    }
+    /* Asegurar que el contenido sea visible con animaciones */
+    body.js-ready section,
+    body.js-ready footer {
+        opacity: 1 !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    .is-visible {
+        opacity: 1 !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    .not-visible {
+        opacity: 0 !important;
+        transform: translateY(20px) !important;
+    }
+}
+
+
+/* Optimizaciones específicas para pantallas muy pequeñas */
+
+@media (max-width: 480px) and (max-height: 800px) {
+    nav ul {
+        flex-direction: column !important;
+        gap: 0.25rem !important;
+    }
+    nav ul li a {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 0.75rem !important;
+        min-width: 60px !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 0.75rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 1rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.8rem !important;
+    }
+    .certificados-grid div {
+        padding: 0.75rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    .enlaces-externos img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    h1 {
+        font-size: 1.3rem !important;
+    }
+    h2 {
+        font-size: 1.1rem !important;
+    }
+    h3 {
+        font-size: 1rem !important;
+    }
+    p {
+        font-size: 0.8rem !important;
+    }
+}
+
+
+/* Optimizaciones para dispositivos con poca memoria pero manteniendo animaciones */
+
+@media (max-width: 720px) {
+    /* Optimizar uso de memoria en animaciones */
+    * {
+        will-change: auto !important;
+    }
+    /* Mantener transformaciones pero optimizadas */
+    header,
+    section,
+    footer,
+    nav ul li,
+    #mis-habilidades .skill-category,
+    .certificados-grid div {
+        backface-visibility: visible !important;
+        perspective: none !important;
+    }
+    /* Optimizar rendimiento de scroll */
+    html {
+        scroll-behavior: smooth !important;
+    }
+    /* Mantener sombras pero simplificadas */
+    header,
+    section,
+    footer {
+        box-shadow: 0 2px 8px rgba(0, 229, 255, 0.1) !important;
+    }
+    nav ul li a {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    }
+    /* Asegurar que los elementos críticos sean visibles */
+    nav,
+    #mis-habilidades,
+    #certificados-section,
+    #contacto {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+
+/* Fallback para dispositivos muy antiguos */
+
+@media (max-width: 320px) {
+    body {
+        font-size: 14px !important;
+    }
+    nav ul li a {
+        font-size: 0.7rem !important;
+        padding: 0.4rem 0.6rem !important;
+        min-width: 50px !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 0.5rem !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 0.9rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.7rem !important;
+    }
+    .certificados-grid div {
+        padding: 0.5rem !important;
+    }
+    .enlaces-externos img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+
+/* Optimizaciones para dispositivos con pantalla táctil */
+
+@media (hover: none) and (pointer: coarse) {
+    nav ul li a {
+        min-height: 44px !important;
+        padding: 0.75rem 1rem !important;
+        touch-action: manipulation !important;
+    }
+    .enlaces-externos img {
+        min-width: 44px !important;
+        min-height: 44px !important;
+        touch-action: manipulation !important;
+    }
+    .certificados-grid img {
+        touch-action: manipulation !important;
+    }
+}
+
+
+/* Asegurar compatibilidad con navegadores antiguos */
+
+@supports not (display: grid) {
+    .certificados-grid {
+        display: block !important;
+    }
+    .certificados-grid div {
+        display: block !important;
+        margin: 1rem 0 !important;
+    }
+    #mis-habilidades .skills-container {
+        display: block !important;
+    }
+    #mis-habilidades .skill-category {
+        display: block !important;
+        margin: 1rem 0 !important;
+    }
+    .enlaces-externos {
+        display: block !important;
+        text-align: center !important;
+    }
+    .enlaces-externos a {
+        display: inline-block !important;
+        margin: 0.5rem !important;
+    }
+}
+
+
+/* Asegurar que el contenido sea visible con animaciones */
+
+body.js-ready section,
+body.js-ready footer {
+    opacity: 1 !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+.is-visible {
+    opacity: 1 !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+.not-visible {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+}
+
+
+/* Restaurar animaciones de secciones alternadas optimizadas */
+
+body.js-ready section:nth-child(odd) {
+    transform: translateX(-50px) !important;
+    transition: all 0.6s ease-out !important;
+}
+
+body.js-ready section:nth-child(even) {
+    transform: translateX(50px) !important;
+    transition: all 0.6s ease-out !important;
+}
+
+body.js-ready section:nth-child(odd).is-visible,
+body.js-ready section:nth-child(even).is-visible {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+}
+
+body.js-ready section:nth-child(odd).not-visible,
+body.js-ready section:nth-child(even).not-visible {
+    opacity: 0 !important;
+}
+
+
+/* Animaciones para elementos dentro de las secciones */
+
+.is-visible .animate-item {
+    animation: fadeInUp 0.8s ease-out forwards !important;
+}
+
+.not-visible .animate-item {
+    animation: fadeOut 0.4s ease-out forwards !important;
+}
+
+
+/* Animaciones para habilidades con retardo optimizado */
+
+#mis-habilidades ul li {
+    opacity: 0 !important;
+    animation: slideInFromLeft 0.6s ease-out forwards !important;
+}
+
+#mis-habilidades ul li:nth-child(1) {
+    animation-delay: 0.1s !important;
+}
+
+#mis-habilidades ul li:nth-child(2) {
+    animation-delay: 0.2s !important;
+}
+
+#mis-habilidades ul li:nth-child(3) {
+    animation-delay: 0.3s !important;
+}
+
+#mis-habilidades ul li:nth-child(4) {
+    animation-delay: 0.4s !important;
+}
+
+#mis-habilidades ul li:nth-child(5) {
+    animation-delay: 0.5s !important;
+}
+
+#mis-habilidades ul li:nth-child(6) {
+    animation-delay: 0.6s !important;
+}
+
+#mis-habilidades ul li:nth-child(7) {
+    animation-delay: 0.7s !important;
+}
+
+#mis-habilidades ul li:nth-child(8) {
+    animation-delay: 0.8s !important;
+}
+
+#mis-habilidades ul li:nth-child(9) {
+    animation-delay: 0.9s !important;
+}
+
+#mis-habilidades ul li:nth-child(10) {
+    animation-delay: 1.0s !important;
+}
+
+#mis-habilidades ul li:nth-child(11) {
+    animation-delay: 1.1s !important;
+}
+
+#mis-habilidades ul li:nth-child(12) {
+    animation-delay: 1.2s !important;
+}
+
+
+/* Animaciones para botones de navegación optimizadas */
+
+nav ul li {
+    animation: buttonFadeIn 0.4s ease-out forwards !important;
+    opacity: 0 !important;
+}
+
+nav ul li:nth-child(1) {
+    animation-delay: 0.1s !important;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.2s !important;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 0.3s !important;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 0.4s !important;
+}
+
+nav ul li:nth-child(5) {
+    animation-delay: 0.5s !important;
+}
+
+nav ul li:nth-child(6) {
+    animation-delay: 0.6s !important;
+}
+
+
+/* Reglas críticas para asegurar visibilidad en dispositivos de bajos recursos */
+
+@media (max-width: 720px) and (max-height: 1280px) {
+    /* Asegurar que la navegación sea visible */
+    nav {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    nav ul {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        margin: 0.5rem;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    nav ul li {
+        display: block !important;
+        margin: 0.25rem;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    nav ul li a {
+        display: block !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+        background: rgba(0, 229, 255, 0.1) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 6px !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        white-space: nowrap;
+        min-width: 80px;
+        text-align: center;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease !important;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+        background: rgba(0, 229, 255, 0.2) !important;
+        color: var(--text-header) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0, 229, 255, 0.3);
+    }
+    /* Asegurar que las habilidades sean visibles */
+    #mis-habilidades {
+        display: block !important;
+        padding: 1rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    #mis-habilidades .skills-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    #mis-habilidades .skill-category {
+        display: block !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        padding: 1rem !important;
+        margin: 0.5rem 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        color: var(--text-header) !important;
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    #mis-habilidades .skill-category ul {
+        display: block !important;
+        list-style: none !important;
+        padding-left: 0 !important;
+        text-align: center !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 !important;
+    }
+    #mis-habilidades .skill-category li {
+        display: inline-block !important;
+        color: var(--text-main) !important;
+        font-size: 0.95rem !important;
+        margin: 0.4rem !important;
+        padding: 0.6rem 1rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: rgba(0, 229, 255, 0.05) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    #mis-habilidades .skill-category li:hover {
+        background: rgba(0, 229, 255, 0.15) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    }
+    /* Asegurar que las animaciones funcionen */
+    .is-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    .not-visible {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(20px) !important;
+    }
+    /* Asegurar que el contenido sea visible con animaciones */
+    body.js-ready section,
+    body.js-ready footer {
+        opacity: 1 !important;
+        visibility: visible !important;
+        animation: fadeInUp 0.6s ease-out !important;
+    }
+    /* Asegurar que todos los elementos sean visibles */
+    section {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    h1,
+    h2,
+    h3,
+    p {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    /* Mantener animaciones pero optimizarlas */
+    * {
+        animation-duration: 0.6s !important;
+        transition-duration: 0.4s !important;
+    }
+}
+
+
+/* Remover las optimizaciones específicas de dispositivos de bajos recursos */
+
+
+/* Las optimizaciones se moverán a un archivo separado */
+
+
+/* Mantener solo las media queries universales */
+
+@media (max-width: 1200px) {
+    main,
+    .container {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    main,
+    .container {
+        max-width: 98%;
+        padding: 0 1rem;
+    }
+    nav ul li {
+        margin: 0.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main,
+    .container {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li a {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h1,
+    h2 {
+        font-size: 1.2rem;
+    }
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+}
+
+
+/* Mantener las animaciones universales */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Animaciones de secciones universales */
+
+body.js-ready section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+body.js-ready section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.js-ready section.not-visible {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+/* Animaciones de elementos específicos */
+
+.is-visible .animate-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.not-visible .animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+/* Animaciones de habilidades */
+
+#mis-habilidades ul li {
+    opacity: 0;
+    animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+#mis-habilidades ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#mis-habilidades ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#mis-habilidades ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+#mis-habilidades ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+#mis-habilidades ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+#mis-habilidades ul li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+#mis-habilidades ul li:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+#mis-habilidades ul li:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+#mis-habilidades ul li:nth-child(9) {
+    animation-delay: 0.9s;
+}
+
+#mis-habilidades ul li:nth-child(10) {
+    animation-delay: 1.0s;
+}
+
+#mis-habilidades ul li:nth-child(11) {
+    animation-delay: 1.1s;
+}
+
+#mis-habilidades ul li:nth-child(12) {
+    animation-delay: 1.2s;
+}
+
+
+/* Animaciones de navegación */
+
+nav ul li {
+    opacity: 0;
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+nav ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+nav ul li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+
+/* Optimizaciones de rendimiento universales */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    nav ul li a:hover,
+    .enlaces-externos img:hover,
+    .certificados-grid img:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+/* REGLAS CRÍTICAS PARA GARANTIZAR VISIBILIDAD */
+
+
+/* Estas reglas tienen la máxima prioridad y aseguran que los elementos críticos sean visibles */
+
+
+/* Garantizar visibilidad de navegación en TODOS los dispositivos */
+
+nav {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 1000 !important;
+}
+
+nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.7rem !important;
+    justify-content: center !important;
+    padding: 0.5rem 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+nav ul li {
+    flex: 1 1 0 !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+nav ul li a {
+    width: 100% !important;
+    height: 56px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 0.98rem !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    padding: 0.4rem 0.7rem !important;
+    color: var(--text-main) !important;
+    text-decoration: none !important;
+    background: var(--nav-button-bg) !important;
+    border: var(--nav-button-border) !important;
+    transition: var(--nav-button-transition) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* Garantizar visibilidad de habilidades técnicas en TODOS los dispositivos */
+
+#mis-habilidades {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+#mis-habilidades .skills-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+    padding: 1rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#mis-habilidades .skill-category {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+}
+
+#mis-habilidades .skill-category h3 {
+    color: var(--text-header) !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#mis-habilidades .skill-category ul {
+    display: block !important;
+    list-style: none !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin: 0 !important;
+}
+
+#mis-habilidades .skill-category li {
+    display: inline-block !important;
+    color: var(--text-main) !important;
+    font-size: 0.95rem !important;
+    margin: 0.4rem !important;
+    padding: 0.6rem 1rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: rgba(0, 229, 255, 0.05) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+#mis-habilidades .skill-category li:hover {
+    background: rgba(0, 229, 255, 0.15) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+
+/* Garantizar visibilidad de secciones en TODOS los dispositivos */
+
+section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+}
+
+
+/* Garantizar visibilidad de textos en TODOS los dispositivos */
+
+h1,
+h2,
+h3,
+p {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+
+/* Media queries específicas para dispositivos móviles */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem !important;
+    }
+    nav ul li {
+        width: 100% !important;
+    }
+    nav ul li a {
+        height: 48px !important;
+        font-size: 0.9rem !important;
+        padding: 0.5rem !important;
+    }
+    #mis-habilidades .skills-container {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0.5rem !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 1rem !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 1.1rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        height: 44px !important;
+        font-size: 0.85rem !important;
+        padding: 0.4rem !important;
+    }
+    #mis-habilidades .skill-category {
+        padding: 0.75rem !important;
+    }
+    #mis-habilidades .skill-category h3 {
+        font-size: 1rem !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.85rem !important;
+    }
+}
+
+
+/* Garantizar que las animaciones no interfieran con la visibilidad */
+
+body.js-ready nav,
+body.js-ready #mis-habilidades,
+body.js-ready section {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.not-visible {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+
+/* Asegurar que los elementos críticos nunca se oculten */
+
+nav.is-visible,
+nav.not-visible,
+#mis-habilidades.is-visible,
+#mis-habilidades.not-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#mis-habilidades .skill-category li {
+    display: list-item !important;
+    color: var(--text-main) !important;
+    font-size: 1rem !important;
+    margin: 0.5rem 0 !important;
+    padding: 0.25rem 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* Regla específica para mostrar los bullets de las listas en habilidades */
+
+#mis-habilidades .skill-category ul,
+#mis-habilidades ul,
+#mis-habilidades .skill-category ul li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-position: inside !important;
 }
