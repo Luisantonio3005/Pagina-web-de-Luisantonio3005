@@ -437,6 +437,509 @@ document.addEventListener('DOMContentLoaded', () => {
             window.addEventListener('orientationchange', handleResize, { passive: true });
         };
 
+        // ========================================
+        // SISTEMA DE IA INTELIGENTE PARA ADAPTACIÓN DINÁMICA
+        // ========================================
+
+        class AdaptiveAI {
+            constructor() {
+                this.performanceMetrics = {
+                    fps: 60,
+                    memoryUsage: 0,
+                    cpuUsage: 0,
+                    batteryLevel: 1,
+                    networkSpeed: 'fast',
+                    deviceType: 'unknown',
+                    animationQuality: 'high',
+                    particleCount: 8,
+                    glowIntensity: 1,
+                    transitionSpeed: 0.3
+                };
+
+                this.learningData = {
+                    frameDrops: 0,
+                    memoryWarnings: 0,
+                    batteryDrain: 0,
+                    userInteractions: 0,
+                    performanceHistory: []
+                };
+
+                this.adaptationRules = {
+                    lowPerformance: {
+                        animationQuality: 'low',
+                        particleCount: 0,
+                        glowIntensity: 0.3,
+                        transitionSpeed: 0.1,
+                        enableParallax: false,
+                        enableParticles: false,
+                        enableHologram: false,
+                        enableEnergyField: false
+                    },
+                    mediumPerformance: {
+                        animationQuality: 'medium',
+                        particleCount: 3,
+                        glowIntensity: 0.6,
+                        transitionSpeed: 0.2,
+                        enableParallax: true,
+                        enableParticles: true,
+                        enableHologram: false,
+                        enableEnergyField: false
+                    },
+                    highPerformance: {
+                        animationQuality: 'high',
+                        particleCount: 6,
+                        glowIntensity: 0.8,
+                        transitionSpeed: 0.3,
+                        enableParallax: true,
+                        enableParticles: true,
+                        enableHologram: true,
+                        enableEnergyField: true
+                    },
+                    ultraPerformance: {
+                        animationQuality: 'ultra-high',
+                        particleCount: 12,
+                        glowIntensity: 1,
+                        transitionSpeed: 0.4,
+                        enableParallax: true,
+                        enableParticles: true,
+                        enableHologram: true,
+                        enableEnergyField: true,
+                        enableSpatialDistortion: true,
+                        enableMagneticField: true
+                    }
+                };
+
+                this.init();
+            }
+
+            // Inicializar el sistema de IA
+            init() {
+                this.detectDeviceCapabilities();
+                this.setupPerformanceMonitoring();
+                this.setupAdaptiveLearning();
+                this.applyOptimalSettings();
+                this.startContinuousOptimization();
+            }
+
+            // Detectar capacidades del dispositivo
+            detectDeviceCapabilities() {
+                // Detección de tipo de dispositivo
+                const screenWidth = window.innerWidth;
+                const screenHeight = window.innerHeight;
+                const pixelRatio = window.devicePixelRatio || 1;
+                const memory = navigator.deviceMemory || 4;
+                const cores = navigator.hardwareConcurrency || 4;
+                const connection = navigator.connection || { effectiveType: '4g' };
+
+                // Clasificación inteligente del dispositivo
+                if (screenWidth <= 480 && memory <= 2) {
+                    this.performanceMetrics.deviceType = 'low-end-mobile';
+                } else if (screenWidth <= 768 && memory <= 4) {
+                    this.performanceMetrics.deviceType = 'mid-range-mobile';
+                } else if (screenWidth <= 1024 && memory <= 8) {
+                    this.performanceMetrics.deviceType = 'tablet';
+                } else if (screenWidth > 1024 && memory > 8) {
+                    this.performanceMetrics.deviceType = 'high-end-desktop';
+                } else {
+                    this.performanceMetrics.deviceType = 'standard-desktop';
+                }
+
+                // Evaluación de rendimiento basada en múltiples factores
+                let performanceScore = 0;
+
+                // Factor de memoria (0-25 puntos)
+                performanceScore += Math.min(memory * 5, 25);
+
+                // Factor de CPU (0-25 puntos)
+                performanceScore += Math.min(cores * 2.5, 25);
+
+                // Factor de pantalla (0-25 puntos)
+                performanceScore += Math.min((screenWidth * screenHeight) / 100000, 25);
+
+                // Factor de conexión (0-25 puntos)
+                const connectionScores = { 'slow-2g': 5, '2g': 10, '3g': 15, '4g': 20, '5g': 25 };
+                performanceScore += connectionScores[connection.effectiveType] || 15;
+
+                // Clasificación de rendimiento
+                if (performanceScore < 30) {
+                    this.performanceMetrics.animationQuality = 'low';
+                } else if (performanceScore < 60) {
+                    this.performanceMetrics.animationQuality = 'medium';
+                } else if (performanceScore < 90) {
+                    this.performanceMetrics.animationQuality = 'high';
+                } else {
+                    this.performanceMetrics.animationQuality = 'ultra-high';
+                }
+
+                console.log(`🔍 IA detectó: ${this.performanceMetrics.deviceType} (Score: ${performanceScore})`);
+            }
+
+            // Configurar monitoreo de rendimiento
+            setupPerformanceMonitoring() {
+                let frameCount = 0;
+                let lastTime = performance.now();
+                let frameDrops = 0;
+
+                const measurePerformance = () => {
+                    const currentTime = performance.now();
+                    const deltaTime = currentTime - lastTime;
+
+                    // Calcular FPS
+                    if (deltaTime > 0) {
+                        const currentFPS = 1000 / deltaTime;
+                        this.performanceMetrics.fps = currentFPS;
+
+                        // Detectar caída de frames
+                        if (currentFPS < 30) {
+                            frameDrops++;
+                            this.learningData.frameDrops++;
+                        }
+                    }
+
+                    // Monitorear uso de memoria
+                    if ('memory' in performance) {
+                        this.performanceMetrics.memoryUsage = performance.memory.usedJSHeapSize / performance.memory.jsHeapSizeLimit;
+                    }
+
+                    // Monitorear batería
+                    if ('getBattery' in navigator) {
+                        navigator.getBattery().then(battery => {
+                            this.performanceMetrics.batteryLevel = battery.level;
+                            if (battery.level < 0.2) {
+                                this.learningData.batteryDrain++;
+                            }
+                        });
+                    }
+
+                    lastTime = currentTime;
+                    frameCount++;
+
+                    // Ajustar configuración si es necesario
+                    if (frameCount % 60 === 0) {
+                        this.analyzeAndAdapt();
+                    }
+
+                    requestAnimationFrame(measurePerformance);
+                };
+
+                requestAnimationFrame(measurePerformance);
+            }
+
+            // Sistema de aprendizaje adaptativo
+            setupAdaptiveLearning() {
+                let interactionCount = 0;
+                let lastInteractionTime = Date.now();
+
+                // Monitorear interacciones del usuario
+                const trackInteraction = () => {
+                    interactionCount++;
+                    this.learningData.userInteractions++;
+                    lastInteractionTime = Date.now();
+
+                    // Ajustar basado en patrones de uso
+                    if (interactionCount > 10) {
+                        this.optimizeForUserBehavior();
+                    }
+                };
+
+                // Event listeners para interacciones
+                document.addEventListener('click', trackInteraction, { passive: true });
+                document.addEventListener('scroll', trackInteraction, { passive: true });
+                document.addEventListener('touchstart', trackInteraction, { passive: true });
+
+                // Monitorear rendimiento en tiempo real
+                setInterval(() => {
+                    this.learningData.performanceHistory.push({
+                        fps: this.performanceMetrics.fps,
+                        memoryUsage: this.performanceMetrics.memoryUsage,
+                        timestamp: Date.now()
+                    });
+
+                    // Mantener solo los últimos 100 registros
+                    if (this.learningData.performanceHistory.length > 100) {
+                        this.learningData.performanceHistory.shift();
+                    }
+                }, 1000);
+            }
+
+            // Analizar y adaptar configuración
+            analyzeAndAdapt() {
+                const avgFPS = this.calculateAverageFPS();
+                const avgMemoryUsage = this.calculateAverageMemoryUsage();
+                const recentFrameDrops = this.learningData.frameDrops;
+
+                // Algoritmo de decisión inteligente
+                let shouldDowngrade = false;
+                let shouldUpgrade = false;
+
+                // Condiciones para degradar
+                if (avgFPS < 30 || avgMemoryUsage > 0.8 || recentFrameDrops > 5) {
+                    shouldDowngrade = true;
+                }
+
+                // Condiciones para mejorar
+                if (avgFPS > 55 && avgMemoryUsage < 0.5 && recentFrameDrops < 2) {
+                    shouldUpgrade = true;
+                }
+
+                // Aplicar cambios si es necesario
+                if (shouldDowngrade) {
+                    this.downgradePerformance();
+                } else if (shouldUpgrade) {
+                    this.upgradePerformance();
+                }
+
+                // Resetear contadores
+                this.learningData.frameDrops = 0;
+            }
+
+            // Calcular FPS promedio
+            calculateAverageFPS() {
+                const recentFPS = this.learningData.performanceHistory
+                    .slice(-10)
+                    .map(record => record.fps);
+
+                return recentFPS.reduce((sum, fps) => sum + fps, 0) / recentFPS.length;
+            }
+
+            // Calcular uso de memoria promedio
+            calculateAverageMemoryUsage() {
+                const recentMemory = this.learningData.performanceHistory
+                    .slice(-10)
+                    .map(record => record.memoryUsage);
+
+                return recentMemory.reduce((sum, usage) => sum + usage, 0) / recentMemory.length;
+            }
+
+            // Optimizar basado en comportamiento del usuario
+            optimizeForUserBehavior() {
+                const timeSinceLastInteraction = Date.now() - this.learningData.userInteractions;
+
+                // Si el usuario está inactivo, reducir animaciones
+                if (timeSinceLastInteraction > 30000) {
+                    this.applySettings(this.adaptationRules.lowPerformance);
+                }
+            }
+
+            // Degradar rendimiento
+            downgradePerformance() {
+                const currentQuality = this.performanceMetrics.animationQuality;
+
+                if (currentQuality === 'ultra-high') {
+                    this.applySettings(this.adaptationRules.highPerformance);
+                } else if (currentQuality === 'high') {
+                    this.applySettings(this.adaptationRules.mediumPerformance);
+                } else if (currentQuality === 'medium') {
+                    this.applySettings(this.adaptationRules.lowPerformance);
+                }
+            }
+
+            // Mejorar rendimiento
+            upgradePerformance() {
+                const currentQuality = this.performanceMetrics.animationQuality;
+
+                if (currentQuality === 'low') {
+                    this.applySettings(this.adaptationRules.mediumPerformance);
+                } else if (currentQuality === 'medium') {
+                    this.applySettings(this.adaptationRules.highPerformance);
+                } else if (currentQuality === 'high') {
+                    this.applySettings(this.adaptationRules.ultraPerformance);
+                }
+            }
+
+            // Aplicar configuración óptima inicial
+            applyOptimalSettings() {
+                const quality = this.performanceMetrics.animationQuality;
+
+                switch (quality) {
+                    case 'low':
+                        this.applySettings(this.adaptationRules.lowPerformance);
+                        break;
+                    case 'medium':
+                        this.applySettings(this.adaptationRules.mediumPerformance);
+                        break;
+                    case 'high':
+                        this.applySettings(this.adaptationRules.highPerformance);
+                        break;
+                    case 'ultra-high':
+                        this.applySettings(this.adaptationRules.ultraPerformance);
+                        break;
+                }
+            }
+
+            // Aplicar configuración específica
+            applySettings(settings) {
+                // Actualizar métricas
+                this.performanceMetrics.animationQuality = settings.animationQuality;
+                this.performanceMetrics.particleCount = settings.particleCount;
+                this.performanceMetrics.glowIntensity = settings.glowIntensity;
+                this.performanceMetrics.transitionSpeed = settings.transitionSpeed;
+
+                // Aplicar clases CSS
+                document.body.classList.remove('ai-low-performance', 'ai-medium-performance', 'ai-high-performance', 'ai-ultra-performance');
+                document.body.classList.add(`ai-${settings.animationQuality.replace('-', '-')}-performance`);
+
+                // Aplicar variables CSS
+                document.documentElement.style.setProperty('--animation-quality', settings.animationQuality);
+                document.documentElement.style.setProperty('--particle-count', settings.particleCount);
+                document.documentElement.style.setProperty('--glow-intensity', settings.glowIntensity);
+                document.documentElement.style.setProperty('--transition-speed', settings.transitionSpeed + 's');
+
+                // Configurar funcionalidades
+                this.configureFeatures(settings);
+
+                console.log(`🤖 IA aplicó: ${settings.animationQuality} (Partículas: ${settings.particleCount}, Glow: ${settings.glowIntensity})`);
+            }
+
+            // Configurar características específicas
+            configureFeatures(settings) {
+                // Parallax
+                if (settings.enableParallax) {
+                    this.enableParallax();
+                } else {
+                    this.disableParallax();
+                }
+
+                // Partículas
+                if (settings.enableParticles) {
+                    this.enableParticles();
+                } else {
+                    this.disableParticles();
+                }
+
+                // Efectos avanzados
+                if (settings.enableHologram) {
+                    this.enableHologram();
+                }
+                if (settings.enableEnergyField) {
+                    this.enableEnergyField();
+                }
+                if (settings.enableSpatialDistortion) {
+                    this.enableSpatialDistortion();
+                }
+                if (settings.enableMagneticField) {
+                    this.enableMagneticField();
+                }
+            }
+
+            // Habilitar/deshabilitar características
+            enableParallax() {
+                document.body.classList.add('parallax-enabled');
+            }
+
+            disableParallax() {
+                document.body.classList.remove('parallax-enabled');
+            }
+
+            enableParticles() {
+                document.body.classList.add('particles-enabled');
+                this.createParticleSystem();
+            }
+
+            disableParticles() {
+                document.body.classList.remove('particles-enabled');
+                this.removeParticleSystem();
+            }
+
+            enableHologram() {
+                document.body.classList.add('hologram-enabled');
+            }
+
+            enableEnergyField() {
+                document.body.classList.add('energy-field-enabled');
+            }
+
+            enableSpatialDistortion() {
+                document.body.classList.add('spatial-distortion-enabled');
+            }
+
+            enableMagneticField() {
+                document.body.classList.add('magnetic-field-enabled');
+            }
+
+            // Sistema de partículas
+            createParticleSystem() {
+                const particleContainer = document.createElement('div');
+                particleContainer.className = 'ai-particle-container';
+                particleContainer.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                    z-index: 1000;
+                `;
+                document.body.appendChild(particleContainer);
+
+                this.particleContainer = particleContainer;
+                this.animateParticles();
+            }
+
+            removeParticleSystem() {
+                if (this.particleContainer) {
+                    this.particleContainer.remove();
+                    this.particleContainer = null;
+                }
+            }
+
+            animateParticles() {
+                if (!this.particleContainer) return;
+
+                const particleCount = this.performanceMetrics.particleCount;
+                const particles = [];
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'ai-particle';
+                    particle.style.cssText = `
+                        position: absolute;
+                        width: 2px;
+                        height: 2px;
+                        background: var(--neon-blue);
+                        border-radius: 50%;
+                        opacity: 0;
+                        animation: aiParticleFloat 3s ease-in-out infinite;
+                        animation-delay: ${Math.random() * 3}s;
+                    `;
+
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+
+                    this.particleContainer.appendChild(particle);
+                    particles.push(particle);
+                }
+
+                // Limpiar partículas después de la animación
+                setTimeout(() => {
+                    particles.forEach(p => p.remove());
+                    if (this.particleContainer) {
+                        this.animateParticles();
+                    }
+                }, 3000);
+            }
+
+            // Optimización continua
+            startContinuousOptimization() {
+                setInterval(() => {
+                    this.analyzeAndAdapt();
+                }, 5000); // Analizar cada 5 segundos
+            }
+
+            // Obtener métricas actuales
+            getMetrics() {
+                return {...this.performanceMetrics };
+            }
+
+            // Obtener datos de aprendizaje
+            getLearningData() {
+                return {...this.learningData };
+            }
+        }
+
+        // Inicializar el sistema de IA
+        const adaptiveAI = new AdaptiveAI();
+
         // Ejecutar inicialización
         init();
         setupMobileResizeHandler();

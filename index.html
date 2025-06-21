@@ -152,8 +152,6 @@
     <meta name="twitter:image:alt" content="Luis Antonio Canales Guerrero - Certificado CCNA - Página Web de Luis Antonio 3005">
 
     <!-- Preload de recursos críticos optimizado -->
-    <link rel="preload" href="Estilos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="Codigo.js" as="script">
     <link rel="preload" href="img/CCNA Conceptos básicos de redes.png" as="image" fetchpriority="high">
     <link rel="preload" href="img/CCNA Fundamentos de Conmutación.png" as="image" fetchpriority="high">
     <link rel="preload" href="img/CCNAv7 Introduction to Networks.png" as="image" fetchpriority="high">
@@ -163,8 +161,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://luisantonio3005.github.io">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="Estilos.css">
+    <!-- CSS Modular - Carga en orden de dependencias -->
+    <link rel="stylesheet" href="estilos-base.css">
+    <link rel="stylesheet" href="estilos-componentes.css">
+    <link rel="stylesheet" href="estilos-responsive.css">
+    <link rel="stylesheet" href="sistema-ia.css">
 
     <!-- Favicon mejorado -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
@@ -517,8 +518,12 @@
         });
     </script>
 
-    <!-- Scripts -->
-    <script src="Codigo.js" defer></script>
+    <!-- Scripts Modulares - Carga en orden de dependencias -->
+    <script src="js-base.js" defer></script>
+    <script src="js-mobile.js" defer></script>
+    <script src="js-ai-system.js" defer></script>
+    <script src="ai-config.js" defer></script>
+    <script src="advanced-animations.js" defer></script>
 </body>
 
 </html>
