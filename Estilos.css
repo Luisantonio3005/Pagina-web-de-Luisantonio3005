@@ -4423,3 +4423,462 @@ nav.not-visible,
         image-rendering: crisp-edges !important;
     }
 }
+
+
+/* ======================================== */
+
+
+/* CORRECCIÓN ESPECÍFICA PARA BOTONES EN MÓVILES */
+
+
+/* ======================================== */
+
+
+/* Deshabilitar animaciones problemáticas en móviles que causan desplazamiento */
+
+@media (max-width: 767px) {
+    /* Deshabilitar transformaciones que causan desplazamiento */
+    nav ul li a,
+    .enlaces-externos a,
+    .certificados-grid a,
+    .project-category a,
+    .social-links a,
+    #contacto a,
+    #mis-habilidades .skill-category li {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+    /* Deshabilitar hover effects problemáticos en móviles */
+    nav ul li a:hover,
+    .enlaces-externos a:hover,
+    .certificados-grid a:hover,
+    .project-category a:hover,
+    .social-links a:hover,
+    #contacto a:hover,
+    #mis-habilidades .skill-category li:hover {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+    /* Deshabilitar animaciones de imágenes que causan desplazamiento */
+    .enlaces-externos img,
+    .certificados-grid img {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+    .enlaces-externos img:hover,
+    .certificados-grid img:hover {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+    }
+    /* Asegurar que todos los elementos permanezcan en su contenedor */
+    nav ul li,
+    .enlaces-externos a,
+    .certificados-grid div,
+    .project-category li,
+    .social-links li,
+    #contacto p,
+    #mis-habilidades .skill-category li {
+        position: relative !important;
+        overflow: visible !important;
+        z-index: auto !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    /* Deshabilitar todas las animaciones keyframe en móviles */
+    @keyframes floatY {
+        0%,
+        50%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes floatX {
+        0%,
+        50%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes fadeInUp {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes fadeInLeft {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes fadeInRight {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes slideInFromBottom {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes slideInFromLeft {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes slideInFromRight {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes iconGlow {
+        0%,
+        100% {
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1) !important;
+        }
+    }
+    @keyframes neonPulse {
+        0%,
+        100% {
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1) !important;
+        }
+    }
+    @keyframes borderGlow {
+        0%,
+        100% {
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.1) !important;
+        }
+    }
+    @keyframes skillsAppear {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes menuFloat {
+        0%,
+        50%,
+        100% {
+            transform: none !important;
+        }
+    }
+    @keyframes buttonFadeIn {
+        0%,
+        100% {
+            transform: none !important;
+        }
+    }
+    /* Asegurar que los contenedores no se muevan */
+    nav ul,
+    .enlaces-externos,
+    .certificados-grid,
+    .projects-container,
+    .project-category,
+    .social-links,
+    #contacto,
+    #mis-habilidades .skills-container,
+    #mis-habilidades .skill-category {
+        position: relative !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        overflow: visible !important;
+    }
+    /* Forzar que todos los elementos se mantengan en su posición */
+    * {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+    /* Excepción solo para el loading spinner */
+    .loading-spinner {
+        animation: spin 1s linear infinite !important;
+    }
+    /* Asegurar que las secciones no se muevan */
+    header,
+    section,
+    footer {
+        position: relative !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        overflow: visible !important;
+    }
+}
+
+
+/* Corrección adicional para teléfonos muy pequeños */
+
+@media (max-width: 480px) {
+    /* Asegurar que ningún elemento se salga del viewport */
+    nav ul li a,
+    .enlaces-externos a,
+    .certificados-grid a,
+    .project-category a,
+    .social-links a,
+    #contacto a,
+    #mis-habilidades .skill-category li {
+        position: static !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        overflow: visible !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    /* Asegurar que los contenedores mantengan su tamaño */
+    nav ul,
+    .enlaces-externos,
+    .certificados-grid,
+    .projects-container,
+    .project-category,
+    .social-links,
+    #contacto,
+    #mis-habilidades .skills-container,
+    #mis-habilidades .skill-category {
+        position: relative !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        overflow: visible !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* ======================================== */
+
+
+/* ADAPTACIÓN SIMPLE PARA TELÉFONOS MÓVILES */
+
+
+/* ======================================== */
+
+
+/* Usar el mismo enfoque que funciona bien en computadoras y tablets */
+
+@media (max-width: 767px) {
+    /* Navegación simple como en desktop */
+    nav ul li a {
+        width: 100% !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        font-size: 0.9rem !important;
+        font-weight: 500 !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+        padding: 0.4rem 0.7rem !important;
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        background: var(--nav-button-bg) !important;
+        border: var(--nav-button-border) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        -webkit-tap-highlight-color: transparent !important;
+        transform: none !important;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+    }
+    /* Hover simple sin transformaciones */
+    nav ul li a:hover,
+    nav ul li a:focus-visible {
+        background: var(--nav-button-hover-bg) !important;
+        color: var(--bg-main) !important;
+        border-color: var(--text-header) !important;
+        box-shadow: 0 0 12px rgba(0, 229, 255, 0.5) !important;
+        transform: none !important;
+    }
+    /* Active simple */
+    nav ul li a:active {
+        transform: none !important;
+        box-shadow: 0 0 8px 2px var(--text-header), 0 0 16px 4px rgba(0, 229, 255, 0.15) !important;
+    }
+    /* Enlaces externos simples */
+    .enlaces-externos a {
+        display: grid !important;
+        place-items: center !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    .enlaces-externos img {
+        width: 48px !important;
+        height: 48px !important;
+        object-fit: contain !important;
+        border-radius: 50% !important;
+        border: 2px solid var(--border) !important;
+        background: rgba(0, 229, 255, 0.05) !important;
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.1) !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    /* Hover simple para imágenes */
+    .enlaces-externos img:hover {
+        border-color: var(--text-header) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.3) !important;
+        transform: none !important;
+    }
+    /* Certificados simples */
+    .certificados-grid img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 10px !important;
+        border: 2px solid var(--border) !important;
+        background: #111 !important;
+        margin-bottom: var(--spacing-sm) !important;
+        display: block !important;
+        box-sizing: border-box !important;
+        padding: 0.5rem !important;
+        transition: none !important;
+        transform: none !important;
+    }
+    /* Hover simple para certificados */
+    .certificados-grid img:hover {
+        border-color: var(--text-header) !important;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.3) !important;
+        transform: none !important;
+    }
+    /* Habilidades simples */
+    #mis-habilidades .skill-category li {
+        display: inline-block !important;
+        color: var(--text-main) !important;
+        font-size: 0.95rem !important;
+        margin: 0.4rem !important;
+        padding: 0.6rem 1rem !important;
+        background: rgba(0, 229, 255, 0.05) !important;
+        border: 1px solid var(--border) !important;
+        border-radius: 8px !important;
+        transition: background-color 0.3s ease !important;
+        transform: none !important;
+    }
+    /* Hover simple para habilidades */
+    #mis-habilidades .skill-category li:hover {
+        background: rgba(0, 229, 255, 0.15) !important;
+        transform: none !important;
+        box-shadow: 0 0 10px rgba(0, 229, 255, 0.3) !important;
+    }
+    /* Proyectos simples */
+    .project-category a {
+        display: inline-block !important;
+        margin: 0.3rem 0.5rem !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 1rem !important;
+        border-radius: 6px !important;
+        color: var(--link-opaque) !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease-in-out !important;
+        text-shadow: 0 1px 8px var(--link-shadow-opaque) !important;
+        transform: none !important;
+    }
+    /* Hover simple para proyectos */
+    .project-category a:hover {
+        color: var(--link-bright) !important;
+        text-decoration: underline !important;
+        text-shadow: 0 2px 12px var(--link-shadow-bright) !important;
+        transform: none !important;
+    }
+    /* Contacto simple */
+    #contacto a {
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+        transform: none !important;
+    }
+    /* Hover simple para contacto */
+    #contacto a:hover {
+        color: var(--text-header) !important;
+        text-decoration: underline !important;
+        transform: none !important;
+    }
+    /* Redes sociales simples */
+    .social-links a {
+        color: var(--text-main) !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+        transform: none !important;
+    }
+    /* Hover simple para redes sociales */
+    .social-links a:hover {
+        color: var(--text-header) !important;
+        text-decoration: underline !important;
+        transform: none !important;
+    }
+}
+
+
+/* Adaptación para teléfonos muy pequeños */
+
+@media (max-width: 480px) {
+    nav ul li a {
+        height: 44px !important;
+        font-size: 0.85rem !important;
+        padding: 0.3rem 0.5rem !important;
+    }
+    .enlaces-externos img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.85rem !important;
+        padding: 0.4rem 0.8rem !important;
+    }
+}
+
+
+/* Adaptación para teléfonos extremadamente pequeños */
+
+@media (max-width: 360px) {
+    nav ul li a {
+        height: 40px !important;
+        font-size: 0.8rem !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+    .enlaces-externos img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+    #mis-habilidades .skill-category li {
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.6rem !important;
+    }
+}
