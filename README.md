@@ -235,4 +235,25 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o pull request para
 
 ---
 
+## Sitemap específico para imágenes y PDFs de certificados
+
+Se ha creado un archivo `sitemap-images.xml` en la raíz del proyecto. Este sitemap incluye una entrada `<url>` para cada certificado, enlazando tanto el PDF como la imagen asociada mediante `<image:image>`, `<image:title>` y `<image:caption>`, siguiendo las mejores prácticas SEO para Google Imágenes y rich results.
+
+### ¿Cómo usarlo?
+1. **Sube el archivo `sitemap-images.xml` a la raíz de tu hosting (GitHub Pages).**
+2. **Agrega la siguiente línea a tu `robots.txt` si no está:**
+   
+   ```
+   Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap-images.xml
+   ```
+3. **En Google Search Console:**
+   - Ve a la sección "Sitemaps".
+   - Añade la URL de tu nuevo sitemap:
+     
+     `https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap-images.xml`
+   - Espera a que Google lo procese.
+
+### Recomendación SEO adicional
+Para un SEO extremo, renombra tus archivos de imágenes y PDFs para que no tengan espacios ni acentos, usando solo minúsculas y guiones. Actualiza los enlaces en tu HTML y sitemaps si haces este cambio.
+
 **Desarrollado con ❤️ por Luis Antonio Canales Guerrero** 

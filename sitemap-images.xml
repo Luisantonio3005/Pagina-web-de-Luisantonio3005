@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <!-- Certificados CCNA Conceptos básicos de redes -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.png</image:loc>
+            <image:title>Certificado CCNA Conceptos básicos de redes - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Conceptos Básicos de Redes obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados CCNA Fundamentos de Conmutación -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.png</image:loc>
+            <image:title>Certificado CCNA Fundamentos de Conmutación - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Fundamentos de Conmutación obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados CCNAv7 Introduction to Networks -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNAv7%20Introduction%20to%20Networks.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNAv7%20Introduction%20to%20Networks.png</image:loc>
+            <image:title>Certificado CCNAv7 Introduction to Networks - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy CCNAv7 Introduction to Networks obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados CCNA Introducción a la Ciberseguridad -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Introducción%20a%20la%20Ciberseguridad.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Introducción%20a%20la%20Ciberseguridad.png</image:loc>
+            <image:title>Certificado CCNA Introducción a la Ciberseguridad - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Introducción a la Ciberseguridad obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados CCNA Redes Empresariales, Seguridad -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/CCNA%20Redes%20Empresariales,%20Seguridad.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/CCNA%20Redes%20Empresariales,%20Seguridad.png</image:loc>
+            <image:title>Certificado CCNA Redes Empresariales, Seguridad - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Cisco Networking Academy en Redes Empresariales, Seguridad obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados IC3 Spark -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20IC3%20Spark.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20IC3%20Spark.png</image:loc>
+            <image:title>Certificado IC3 Spark - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Certiport IC3 Spark obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados PYTHON -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificación%20PYTHON.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificación%20PYTHON.png</image:loc>
+            <image:title>Certificado de Python - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Santander Open Academy en Programación Python obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados Fundamentos de IA -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Fundamentos%20de%20IA.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Fundamentos%20de%20IA.png</image:loc>
+            <image:title>Certificado Fundamentos de IA - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado de Fundamentos de IA Generativa por Microsoft y Eduit obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados Prompting Responsable IA -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Prompting%20responsable%20maximiza%20la%20IA.png</image:loc>
+            <image:title>Certificado de IA Prompting Responsable - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Santander Open Academy en Prompting Responsable obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados Google Inteligencia Artificial y Productividad -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Google%20Inteligencia%20Artificial%20y%20productividad.pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Google%20Inteligencia%20Artificial%20y%20productividad-1.png</image:loc>
+            <image:title>Certificado Google Inteligencia Artificial y Productividad - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado oficial de Santander Open Academy en Google Inteligencia Artificial y Productividad obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados Microsoft PowerPoint -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).png</image:loc>
+            <image:title>Certificado Microsoft PowerPoint Office 2019 - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado Microsoft PowerPoint Office 2019 obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+    <!-- Certificados Microsoft Word -->
+    <url>
+        <loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/Pdf/Certificacion%20Microsoft%20Word%20(Office%202019).pdf</loc>
+        <image:image>
+            <image:loc>https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/img/Certificacion%20Microsoft%20Word%20(Office%202019).png</image:loc>
+            <image:title>Certificado Microsoft Word Office 2019 - Luis Antonio Canales Guerrero</image:title>
+            <image:caption>Certificado Microsoft Word Office 2019 obtenido por Luis Antonio Canales Guerrero.</image:caption>
+        </image:image>
+    </url>
+</urlset> 
