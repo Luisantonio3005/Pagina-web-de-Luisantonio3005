@@ -205,24 +205,6 @@ El sistema incluye un panel de debug que se puede activar con **triple clic** en
 
 ---
 
-## 🚀 Instalación y Uso
-
-1. **Clonar el repositorio**:
-   ```bash
-   git clone https://github.com/luisantonio3005/Pagina-web-de-Luisantonio3005.git
-   ```
-
-2. **Abrir el proyecto**:
-   ```bash
-   cd Pagina-web-de-Luisantonio3005
-   ```
-
-3. **Abrir index.html** en tu navegador preferido
-
-4. **Disfrutar de la experiencia** con el sistema de IA activado
-
----
-
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
