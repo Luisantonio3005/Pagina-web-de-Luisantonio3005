@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Test Low End</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
+    <link rel="stylesheet" href="low-end-optimizations.css">
+</head>
+
+<body>
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="site-container">
+        <header>
+            <h1>Test - Sistema Universal de Optimizaciones</h1>
+            <p class="header-subtitle">Verificación del sistema de optimizaciones separadas</p>
+        </header>
+
+        <main>
+            <div class="test-info">
+                <h2>Información del Sistema</h2>
+                <p>Este archivo prueba el nuevo sistema de optimizaciones universales que se adapta automáticamente a todos los dispositivos.</p>
+                <p>Las optimizaciones se cargan condicionalmente según las características del dispositivo.</p>
+
+                <div class="device-info">
+                    <p><strong>Resolución:</strong> <span id="resolution">Detectando...</span></p>
+                    <p><strong>Tipo de dispositivo:</strong> <span id="device-type">Detectando...</span></p>
+                    <p><strong>Optimizaciones cargadas:</strong> <span id="optimizations">Detectando...</span></p>
+                    <p><strong>Memoria disponible:</strong> <span id="memory">Detectando...</span></p>
+                    <p><strong>Tipo de conexión:</strong> <span id="connection">Detectando...</span></p>
+                </div>
+
+                <div class="device-info">
+                    <h3>Estado de Elementos Críticos:</h3>
+                    <p><span id="nav-status" class="status-indicator status-warning"></span><strong>Navegación:</strong> <span id="nav-text">Verificando...</span></p>
+                    <p><span id="skills-status" class="status-indicator status-warning"></span><strong>Habilidades:</strong> <span id="skills-text">Verificando...</span></p>
+                    <p><span id="sections-status" class="status-indicator status-warning"></span><strong>Secciones:</strong> <span id="sections-text">Verificando...</span></p>
+                    <p><span id="buttons-status" class="status-indicator status-warning"></span><strong>Botones:</strong> <span id="buttons-text">Verificando...</span></p>
+                </div>
+            </div>
+
+            <section id="navegacion">
+                <h2>Navegación del Sitio</h2>
+                <nav aria-label="Navegación principal">
+                    <ul>
+                        <li><a href="#sobre-mi" class="test-button">Sobre mí</a></li>
+                        <li><a href="#mis-habilidades" class="test-button">Mis habilidades</a></li>
+                        <li><a href="#certificados-section" class="test-button">Mis certificados</a></li>
+                        <li><a href="#contacto" class="test-button">Contacto</a></li>
+                        <li><a href="#rutas-proyectos" class="test-button">Rutas y Proyectos</a></li>
+                        <li><a href="#acerca-de" class="test-button">Acerca de</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <section id="sobre-mi" class="test-section">
+                <h2>Sobre mí</h2>
+                <p>Soy <strong>Luis Antonio Canales Guerrero</strong>, un desarrollador web profesional con formación en informática.</p>
+                <p>Mi experiencia incluye la creación de experiencias web innovadoras con un enfoque analítico y la capacidad de resolver problemas complejos.</p>
+            </section>
+
+            <section id="mis-habilidades" class="test-section">
+                <h2>Mis habilidades técnicas</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Redes y Certificaciones</h3>
+                        <ul>
+                            <li>CCNA - Conceptos básicos de redes</li>
+                            <li>CCNA - Fundamentos de Conmutación</li>
+                            <li>CCNAv7 - Introduction to Networks</li>
+                            <li>Administración de redes</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Desarrollo Web</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Programación y Bases de Datos</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>MySQL</li>
+                            <li>GitHub</li>
+                            <li>Visual Studio Code</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Inteligencia Artificial</h3>
+                        <ul>
+                            <li>Fundamentos de IA</li>
+                            <li>Prompting Responsable</li>
+                            <li>IA Generativa</li>
+                            <li>Machine Learning Básico</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Habilidades de Informática</h3>
+                        <ul>
+                            <li>Arquitectura de Computadoras</li>
+                            <li>Sistemas Operativos</li>
+                            <li>Mantenimiento de Hardware</li>
+                            <li>Instalación de Software</li>
+                            <li>Configuración de Sistemas</li>
+                            <li>Troubleshooting Técnico</li>
+                            <li>Seguridad Informática Básica</li>
+                            <li>Virtualización</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certificados-section" class="test-section">
+                <h2>Certificaciones Profesionales</h2>
+                <p>Mi formación incluye certificaciones oficiales de instituciones reconocidas internacionalmente.</p>
+                <div class="certificados-grid">
+                    <div class="certificate">
+                        <h3>Certificado CCNA Conceptos básicos de redes</h3>
+                        <img src="img/CCNA Conceptos básicos de redes.png" alt="Certificado CCNA" loading="lazy">
+                    </div>
+                    <div class="certificate">
+                        <h3>Certificado de Python</h3>
+                        <img src="img/Certificación PYTHON.png" alt="Certificado Python" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto" class="test-section">
+                <h2>Información de contacto profesional</h2>
+                <div class="contact-info">
+                    <p><strong>Correo electrónico:</strong> <a href="mailto:luisantoniocg3005@outlook.com">luisantoniocg3005@outlook.com</a></p>
+                    <p><strong>Teléfono:</strong> <a href="tel:+525574797052">+52 55 7479 7052</a></p>
+                    <p><strong>Ubicación:</strong> México</p>
+                </div>
+            </section>
+
+            <section id="rutas-proyectos" class="test-section">
+                <h2>Proyectos y Recursos de Desarrollo</h2>
+                <div class="projects-container">
+                    <div class="project-category">
+                        <h3>Desarrollo Frontend - CSS y HTML</h3>
+                        <ul>
+                            <li><a href="CSS/Bordes/bordes.html" target="_blank">CSS - Bordes y Estilos</a></li>
+                            <li><a href="CSS/Enlaces a otras paginas/Enlaces a paginas.html" target="_blank">CSS - Enlaces y Navegación</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="acerca-de">
+            <div class="footer-container">
+                <h3>Acerca de este sitio</h3>
+                <p>&copy; 2025 Luis Antonio Canales Guerrero. Todos los derechos reservados.</p>
+                <p>Página web desarrollada con HTML5, CSS3 y JavaScript.</p>
+                <p><a href="index.html" class="test-button">Volver a la página principal</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Script para mostrar información del dispositivo y verificar elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Test page loaded successfully');
+
+            // Detectar información del dispositivo
+            const resolution = document.getElementById('resolution');
+            const deviceType = document.getElementById('device-type');
+            const optimizations = document.getElementById('optimizations');
+            const memory = document.getElementById('memory');
+            const connection = document.getElementById('connection');
+
+            // Resolución
+            resolution.textContent = `${window.innerWidth} x ${window.innerHeight}`;
+
+            // Tipo de dispositivo
+            const userAgent = navigator.userAgent;
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+            const isAndroid = /Android/i.test(userAgent);
+
+            if (isAndroid) {
+                deviceType.textContent = 'Android';
+            } else if (isMobile) {
+                deviceType.textContent = 'Dispositivo móvil';
+            } else {
+                deviceType.textContent = 'Dispositivo de escritorio';
+            }
+
+            // Detectar si se cargaron optimizaciones
+            const lowEndCSS = document.getElementById('low-end-optimizations');
+            if (lowEndCSS) {
+                optimizations.textContent = 'Optimizaciones de bajos recursos cargadas';
+            } else {
+                optimizations.textContent = 'Optimizaciones estándar';
+            }
+
+            // Memoria (si está disponible)
+            if (navigator.deviceMemory) {
+                memory.textContent = `${navigator.deviceMemory} GB`;
+            } else {
+                memory.textContent = 'No disponible';
+            }
+
+            // Conexión (si está disponible)
+            if (navigator.connection) {
+                connection.textContent = navigator.connection.effectiveType || 'No disponible';
+            } else {
+                connection.textContent = 'No disponible';
+            }
+
+            // Función para verificar visibilidad de elementos
+            const checkElementVisibility = (element, statusId, textId) => {
+                const statusElement = document.getElementById(statusId);
+                const textElement = document.getElementById(textId);
+
+                if (element && element.offsetParent !== null) {
+                    statusElement.className = 'status-indicator status-ok';
+                    textElement.textContent = 'Visible ✓';
+                } else {
+                    statusElement.className = 'status-indicator status-error';
+                    textElement.textContent = 'No visible ✗';
+                }
+            };
+
+            // Verificar elementos críticos después de un delay
+            setTimeout(() => {
+                const nav = document.querySelector('nav');
+                const skills = document.querySelector('#mis-habilidades');
+                const sections = document.querySelectorAll('section');
+                const buttons = document.querySelectorAll('nav ul li a');
+
+                checkElementVisibility(nav, 'nav-status', 'nav-text');
+                checkElementVisibility(skills, 'skills-status', 'skills-text');
+
+                // Verificar secciones
+                const sectionsStatus = document.getElementById('sections-status');
+                const sectionsText = document.getElementById('sections-text');
+                const visibleSections = Array.from(sections).filter(section => section.offsetParent !== null);
+
+                if (visibleSections.length === sections.length) {
+                    sectionsStatus.className = 'status-indicator status-ok';
+                    sectionsText.textContent = `${visibleSections.length}/${sections.length} visibles ✓`;
+                } else {
+                    sectionsStatus.className = 'status-indicator status-error';
+                    sectionsText.textContent = `${visibleSections.length}/${sections.length} visibles ✗`;
+                }
+
+                // Verificar botones
+                const buttonsStatus = document.getElementById('buttons-status');
+                const buttonsText = document.getElementById('buttons-text');
+                const visibleButtons = Array.from(buttons).filter(button => button.offsetParent !== null);
+
+                if (visibleButtons.length === buttons.length) {
+                    buttonsStatus.className = 'status-indicator status-ok';
+                    buttonsText.textContent = `${visibleButtons.length}/${buttons.length} visibles ✓`;
+                } else {
+                    buttonsStatus.className = 'status-indicator status-error';
+                    buttonsText.textContent = `${visibleButtons.length}/${buttons.length} visibles ✗`;
+                }
+
+                console.log('Navigation visible:', nav && nav.offsetParent !== null);
+                console.log('Skills visible:', skills && skills.offsetParent !== null);
+                console.log('Sections count:', sections.length);
+                console.log('Visible sections:', visibleSections.length);
+                console.log('Buttons count:', buttons.length);
+                console.log('Visible buttons:', visibleButtons.length);
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
