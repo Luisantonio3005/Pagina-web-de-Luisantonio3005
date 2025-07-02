@@ -72,4 +72,32 @@ Allow: /img/
 
 User-agent: LinkedInBot
 Allow: /
-Allow: /img/ 
+Allow: /img/
+
+# --- Certificaciones: Permitir indexación de todos los PDFs e imágenes ---
+Allow: /Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf
+Allow: /Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf
+Allow: /Pdf/CCNA%20Introducci%C3%B3n%20a%20la%20Ciberseguridad.pdf
+Allow: /Pdf/CCNA%20Redes%20Empresariales,%20Seguridad.pdf
+Allow: /Pdf/CCNAv7%20Introduction%20to%20Networks.pdf
+Allow: /Pdf/Certificacion%20IC3%20Spark.pdf
+Allow: /Pdf/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).pdf
+Allow: /Pdf/Certificacion%20Microsoft%20Word%20(Office%202019).pdf
+Allow: /Pdf/Certificaci%C3%B3n%20PYTHON.pdf
+Allow: /Pdf/Fundamentos%20de%20IA.pdf
+Allow: /Pdf/Google%20Inteligencia%20Artificial%20y%20productividad.pdf
+Allow: /Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf
+Allow: /img/ccna-conceptos-basicos-redes.png
+Allow: /img/ccna-fundamentos-conmutacion.png
+Allow: /img/ccna-introduccion-ciberseguridad.png
+Allow: /img/ccna-redes-empresariales-seguridad.png
+Allow: /img/ccnav7-introduction-networks.png
+Allow: /img/certificacion-fundamentos-ia.png
+Allow: /img/certificacion-ic3-spark.png
+Allow: /img/certificacion-microsoft-powerpoint-2019.png
+Allow: /img/certificacion-microsoft-word-2019.png
+Allow: /img/certificacion-python.png
+Allow: /img/google-inteligencia-artificial-productividad-1.png
+Allow: /img/prompting-responsable-maximiza-ia.png
+
+Disallow: /img/directAccess/
