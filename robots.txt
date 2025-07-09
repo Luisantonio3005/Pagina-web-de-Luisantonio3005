@@ -27,6 +27,7 @@ Allow: /img/certificacion-python.png
 Allow: /img/certificacion-fundamentos-ia.png
 Allow: /img/prompting-responsable-maximiza-ia.png
 Allow: /img/google-inteligencia-artificial-productividad-1.png
+
 # Permitir acceso a PDFs de certificados
 Allow: /Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf
 Allow: /Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf
@@ -51,6 +52,7 @@ Disallow: /node_modules/
 Disallow: /README.md
 Disallow: /README-LOW-END.md
 Disallow: /sitemap.xml
+Disallow: /sitemap-images.xml
 Disallow: /robots.txt
 Disallow: /site.webmanifest
 Disallow: /advanced-animations.js
