@@ -22,28 +22,62 @@ Allow: /JS/
 Allow: /Pdf/
 
 # Permitir acceso a imágenes de certificados
-Allow: /img/
-Allow: /img/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.png
-Allow: /img/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.png
-Allow: /img/CCNAv7%20Introduction%20to%20Networks.png
-Allow: /img/Certificacion%20IC3%20Spark.png
-Allow: /img/Certificaci%C3%B3n%20PYTHON.png
-Allow: /img/Certificacion%20Fundamentos%20de%20IA.png
-Allow: /img/Prompting%20responsable%20maximiza%20la%20IA.png
-Allow: /img/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).png
-Allow: /img/Certificacion%20Microsoft%20Word%20(Office%202019).png
+Allow: /img/ccna-conceptos-basicos-redes.png
+Allow: /img/ccna-fundamentos-conmutacion.png
+Allow: /img/ccnav7-introduction-networks.png
+Allow: /img/ccna-introduccion-ciberseguridad.png
+Allow: /img/ccna-redes-empresariales-seguridad.png
+Allow: /img/certificacion-ic3-spark.png
+Allow: /img/certificacion-microsoft-powerpoint-2019.png
+Allow: /img/certificacion-microsoft-word-2019.png
+Allow: /img/certificacion-python.png
+Allow: /img/certificacion-fundamentos-ia.png
+Allow: /img/prompting-responsable-maximiza-ia.png
+Allow: /img/google-inteligencia-artificial-productividad-1.png
+# Permitir acceso a PDFs de certificados
+Allow: /Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf
+Allow: /Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf
+Allow: /Pdf/CCNAv7%20Introduction%20to%20Networks.pdf
+Allow: /Pdf/CCNA%20Introducci%C3%B3n%20a%20la%20Ciberseguridad.pdf
+Allow: /Pdf/CCNA%20Redes%20Empresariales,%20Seguridad.pdf
+Allow: /Pdf/Certificacion%20IC3%20Spark.pdf
+Allow: /Pdf/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).pdf
+Allow: /Pdf/Certificacion%20Microsoft%20Word%20(Office%202019).pdf
+Allow: /Pdf/Certificaci%C3%B3n%20PYTHON.pdf
+Allow: /Pdf/Fundamentos%20de%20IA.pdf
+Allow: /Pdf/Google%20Inteligencia%20Artificial%20y%20productividad.pdf
+Allow: /Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf
 
-# Permitir acceso a archivos de configuración
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /site.webmanifest
-
-# Bloquear archivos de desarrollo y configuración
+# Bloquear archivos de desarrollo, configuración y archivos en la raíz (excepto index.html)
 Disallow: /.git/
 Disallow: /.github/
 Disallow: /node_modules/
 Disallow: /README.md
 Disallow: /README-LOW-END.md
+Disallow: /sitemap.xml
+Disallow: /robots.txt
+Disallow: /site.webmanifest
+Disallow: /advanced-animations.js
+Disallow: /ai-config.js
+Disallow: /css-loader.js
+Disallow: /estilos-base.css
+Disallow: /estilos-clean.css
+Disallow: /estilos-componentes.css
+Disallow: /estilos-responsive.css
+Disallow: /google-site-verification.html
+Disallow: /google3386d1ae94d341bf.html
+Disallow: /js-ai-system.js
+Disallow: /js-base.js
+Disallow: /js-mobile.js
+Disallow: /js-performance-ai.js
+Disallow: /low-end-optimizations.css
+Disallow: /redirect.html
+Disallow: /sistema-ia.css
+Disallow: /test-low-end.html
+Disallow: /Captura%20de%20pantalla%202025-04-20%20150510.png
+Disallow: /Codigo.js
+# index.html sí está permitido
+Allow: /index.html
 
 # Sitemap
 Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap.xml
