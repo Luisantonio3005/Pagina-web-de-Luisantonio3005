@@ -3,10 +3,6 @@ Allow: /
 
 # Permitir acceso a todos los archivos principales
 Allow: /index.html
-Allow: /test-low-end.html
-Allow: /Estilos.css
-Allow: /Codigo.js
-Allow: /low-end-optimizations.css
 
 # Permitir acceso a proyectos CSS
 Allow: /CSS/
@@ -17,9 +13,6 @@ Allow: /CSS/Modelo%20de%20caja/
 
 # Permitir acceso a proyectos JavaScript
 Allow: /JS/
-
-# Permitir acceso a certificados PDF
-Allow: /Pdf/
 
 # Permitir acceso a imágenes de certificados
 Allow: /img/ccna-conceptos-basicos-redes.png
@@ -47,6 +40,9 @@ Allow: /Pdf/Certificaci%C3%B3n%20PYTHON.pdf
 Allow: /Pdf/Fundamentos%20de%20IA.pdf
 Allow: /Pdf/Google%20Inteligencia%20Artificial%20y%20productividad.pdf
 Allow: /Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf
+
+# index.html sí está permitido
+Allow: /index.html
 
 # Bloquear archivos de desarrollo, configuración y archivos en la raíz (excepto index.html)
 Disallow: /.git/
@@ -76,8 +72,7 @@ Disallow: /sistema-ia.css
 Disallow: /test-low-end.html
 Disallow: /Captura%20de%20pantalla%202025-04-20%20150510.png
 Disallow: /Codigo.js
-# index.html sí está permitido
-Allow: /index.html
+Disallow: /img/directAccess/
 
 # Sitemap
 Sitemap: https://luisantonio3005.github.io/Pagina-web-de-Luisantonio3005/sitemap.xml
@@ -107,31 +102,3 @@ Allow: /img/
 User-agent: LinkedInBot
 Allow: /
 Allow: /img/
-
-# --- Certificaciones: Permitir indexación de todos los PDFs e imágenes ---
-Allow: /Pdf/CCNA%20Conceptos%20b%C3%A1sicos%20de%20redes.pdf
-Allow: /Pdf/CCNA%20Fundamentos%20de%20Conmutaci%C3%B3n.pdf
-Allow: /Pdf/CCNA%20Introducci%C3%B3n%20a%20la%20Ciberseguridad.pdf
-Allow: /Pdf/CCNA%20Redes%20Empresariales,%20Seguridad.pdf
-Allow: /Pdf/CCNAv7%20Introduction%20to%20Networks.pdf
-Allow: /Pdf/Certificacion%20IC3%20Spark.pdf
-Allow: /Pdf/Certificacion%20Microsoft%20PowerPoint%20(Office%202019).pdf
-Allow: /Pdf/Certificacion%20Microsoft%20Word%20(Office%202019).pdf
-Allow: /Pdf/Certificaci%C3%B3n%20PYTHON.pdf
-Allow: /Pdf/Fundamentos%20de%20IA.pdf
-Allow: /Pdf/Google%20Inteligencia%20Artificial%20y%20productividad.pdf
-Allow: /Pdf/Prompting%20responsable%20maximiza%20la%20IA.pdf
-Allow: /img/ccna-conceptos-basicos-redes.png
-Allow: /img/ccna-fundamentos-conmutacion.png
-Allow: /img/ccna-introduccion-ciberseguridad.png
-Allow: /img/ccna-redes-empresariales-seguridad.png
-Allow: /img/ccnav7-introduction-networks.png
-Allow: /img/certificacion-fundamentos-ia.png
-Allow: /img/certificacion-ic3-spark.png
-Allow: /img/certificacion-microsoft-powerpoint-2019.png
-Allow: /img/certificacion-microsoft-word-2019.png
-Allow: /img/certificacion-python.png
-Allow: /img/google-inteligencia-artificial-productividad-1.png
-Allow: /img/prompting-responsable-maximiza-ia.png
-
-Disallow: /img/directAccess/
